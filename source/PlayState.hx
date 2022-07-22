@@ -444,7 +444,7 @@ class PlayState extends MusicBeatState
 		}
 		else
 		{
-			detailsText = "Freeplay";
+			detailsText = "Song Selector";
 		}
 
 		// String for when the game is paused
