@@ -1,5 +1,5 @@
-shop
-bonus
-weekfinale
-weekb
 weekg
+weekb
+weekfinale
+bonus
+shop

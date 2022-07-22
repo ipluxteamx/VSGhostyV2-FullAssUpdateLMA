@@ -543,6 +543,20 @@ class PlayState extends MusicBeatState
 			case 'ghostyStage': //Week G
 				var bg:BGSprite = new BGSprite('backgrounds/ghostyStage', -600, -200, 1, 1);
 				add(bg);
+
+			case 'god': //Week B part 1
+				var bg:BGSprite = new BGSprite('backgrounds/bgGod', -2800, -5000, 0.9, 0.9);
+				bg.setGraphicSize(Std.int(bg.width * 10));
+				bg.updateHitbox();
+
+				var ground:BGSprite = new BGSprite('backgrounds/groundGod', -600, 600, 1, 1);
+				ground.setGraphicSize(Std.int(bg.width * 1.8));
+				ground.updateHitbox();
+
+				add(bg);
+				add(ground);
+
+				addShaderToCamera('bgGod', new GlitchEffect(0.025, 0.2, 0.2));
 			
 			case 'ghostyHouse': //Week B part 1
 				var bg:BGSprite = new BGSprite('backgrounds/ghostyHouse', -450, -225, 1, 1);
@@ -1663,7 +1677,7 @@ class PlayState extends MusicBeatState
 		camFollow.set(dad.x + 280, dad.y + 170);
 		switch(songName)
 		{
-			case 'ugh':
+			/*case 'ugh':
 				cutsceneHandler.endTime = 12;
 				cutsceneHandler.music = 'DISTORTO';
 				precacheList.set('wellWellWell', 'sound');
@@ -1901,7 +1915,7 @@ class PlayState extends MusicBeatState
 				cutsceneHandler.timer(32.2, function()
 				{
 					zoomBack();
-				});
+				});*/
 		}
 	}
 

@@ -37,8 +37,6 @@ class StageData {
 		} else if(SONG.song != null) {
 			switch (SONG.song.toLowerCase().replace(' ', '-'))
 			{
-				case 'despair' | 'disturbance' | 'anger':
-					stage = '';
 				default:
 					stage = 'stage';
 			}

@@ -7,9 +7,12 @@ function onCreate()
     setTextSize('coinCounter', 36)
     addLuaText('coinCounter', true)
     setObjectCamera('coinCounter', 'other')
-    makeAnimatedLuaSprite('shopImages', 'shopImages/shopImages', 435, 200)
-    addLuaSprite('shopImages', true)
-    setObjectCamera('shopImages', 'other')
+    makeLuaSprite('dahard', 'shopImages/dahard', 435, 200)
+    addLuaSprite('dahard', true)
+    setObjectCamera('dahard', 'other')
+    makeLuaSprite('candy', 'shopImages/candy', 435, 200)
+    addLuaSprite('candy', true)
+    setObjectCamera('candy', 'other')
 end
 
 function onStartCountdown()
@@ -27,7 +30,7 @@ function onUpdate()
 
     setTextString('coinCounter', 'Soul Coins: ' .. getDataFromSave('vsGhostyShop', 'coin'))
 
-    if keyJustPressed('accept') and getDataFromSave('vsGhostyShop', 'daHardUnlock') == 0 and getDataFromSave('vsGhostyShop', 'coin') >= 1550 and curSel == 0 then
+    if keyJustPressed('accept') and getDataFromSave('vsGhostyShop', 'daHardUnlock') == 0 and getDataFromSave('vsGhostyShop', 'coin') >= 500 and curSel == 0 then
         setDataFromSave('vsGhostyShop', 'daHardUnlock', 1)
         setDataFromSave('vsGhostyShop', 'coin', getDataFromSave('vsGhostyShop', 'coin') - 1550)
         flushSaveData('vsGhostyShop')
@@ -36,7 +39,7 @@ function onUpdate()
         loadSong('dahard')
     end
 
-    if keyJustPressed('accept') and getDataFromSave('vsGhostyShop', 'candyUnlock') == 0 and getDataFromSave('vsGhostyShop', 'coin') >= 2150 and curSel == 1 then
+    if keyJustPressed('accept') and getDataFromSave('vsGhostyShop', 'candyUnlock') == 0 and getDataFromSave('vsGhostyShop', 'coin') >= 750 and curSel == 1 then
         setDataFromSave('vsGhostyShop', 'candyUnlock', 1)
         setDataFromSave('vsGhostyShop', 'coin', getDataFromSave('vsGhostyShop', 'coin') - 2150)
         flushSaveData('vsGhostyShop')
@@ -46,10 +49,12 @@ function onUpdate()
     end
 
     if curSel == 0 then
-        objectPlayAnimation('shopImages', 'dahard', true)
+        setProperty('dahard.visible', false)
+        setProperty('candy.visible', true)
     end
     if curSel == 1 then
-        objectPlayAnimation('shopImages', 'candy', true)
+        setProperty('dahard.visible', true)
+        setProperty('candy.visible', false)
     end
 
     if keyJustPressed('left') and curSel > 0 then
