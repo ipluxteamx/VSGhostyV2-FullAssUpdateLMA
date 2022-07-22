@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="shopImages.png"><SubTexture name="shopImages candy0000" x="0" y="0" width="404" height="404" frameX="0" frameY="0" frameWidth="404" frameHeight="404" />
+<SubTexture name="shopImages dahard0000" x="404" y="0" width="404" height="404" frameX="0" frameY="0" frameWidth="404" frameHeight="404" />
+<SubTexture name="shopImages emergency0000" x="0" y="404" width="404" height="404" frameX="0" frameY="0" frameWidth="404" frameHeight="404" />
+<SubTexture name="shopImages enderpearls0000" x="404" y="404" width="404" height="404" frameX="0" frameY="0" frameWidth="404" frameHeight="404" />
+<SubTexture name="shopImages uhoh0000" x="0" y="808" width="404" height="404" frameX="0" frameY="0" frameWidth="404" frameHeight="404" />
+</TextureAtlas>

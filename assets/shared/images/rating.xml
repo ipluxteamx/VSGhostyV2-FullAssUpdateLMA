@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="rating.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="rating0000" x="0" y="0" width="196" height="278" pivotX="226.4" pivotY="196.5" frameX="-41" frameY="-49" frameWidth="270" frameHeight="354"/>
+	<SubTexture name="rating0001" x="196" y="0" width="222" height="222" frameX="0" frameY="-77" frameWidth="270" frameHeight="354"/>
+	<SubTexture name="rating0002" x="418" y="0" width="231" height="222" frameX="-31" frameY="-71" frameWidth="270" frameHeight="354"/>
+	<SubTexture name="rating0003" x="649" y="0" width="217" height="197" frameX="-53" frameY="-108" frameWidth="270" frameHeight="354"/>
+	<SubTexture name="rating0004" x="866" y="0" width="162" height="243" frameX="-79" frameY="-71" frameWidth="270" frameHeight="354"/>
+	<SubTexture name="rating0005" x="1028" y="0" width="213" height="264" frameX="-47" frameY="-70" frameWidth="270" frameHeight="354"/>
+	<SubTexture name="rating0006" x="1241" y="0" width="233" height="354" frameX="-30" frameY="0" frameWidth="270" frameHeight="354"/>
+</TextureAtlas>

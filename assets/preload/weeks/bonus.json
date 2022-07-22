@@ -1,0 +1,80 @@
+{
+	"storyName": "Bonus Songs",
+	"difficulties": "Bonus",
+	"hideFreeplay": true,
+	"weekBackground": "stage",
+	"weekBefore": "finale",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"ghosty",
+		"bf",
+		"gf"
+	],
+	"songs": [
+		[
+			"Smile",
+			"ghosty",
+			[
+				50,
+				50,
+				50
+			]
+		],
+		[
+			"Spam",
+			"bf",
+			[
+				250,
+				50,
+				50
+			]
+		],
+		[
+			"Ender Pearls",
+			"ghosty",
+			[
+				50,
+				50,
+				50
+			]
+		],
+		[
+			"Uh Oh",
+			"ghosty",
+			[
+				0,
+				0,
+				0
+			]
+		],
+		[
+			"Soinc",
+			"gf",
+			[
+				155,
+				0,
+				0
+			]
+		],
+		[
+			"Insanity",
+			"ghosty",
+			[
+				60,
+				60,
+				60
+			]
+		],
+		[
+			"Emergency",
+			"blake",
+			[
+				0,
+				0,
+				0
+			]
+		]
+	],
+	"hideStoryMode": true,
+	"weekName": "Bonus"
+}

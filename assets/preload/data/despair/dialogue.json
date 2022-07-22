@@ -1,0 +1,95 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.055,
+			"portrait": "ghosty",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "What exactly are you"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "beep bop"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ghosty",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "get your bitch dwarf ass out of here"
+		},
+		{
+			"speed": 0.04,
+			"portrait": "bf",
+			"boxState": "angry",
+			"expression": "talk",
+			"text": "BEEP BAP BOOP SKDOOP BITCH"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ghosty",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "I am gonna call the police if you do not get out immediately."
+		},
+		{
+			"speed": 0.065,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "bruh try, i mean beep boop bap"
+		},
+		{
+			"speed": 0.135,
+			"portrait": "ghosty",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "What do you want?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "a bep bop"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ghosty",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "dude i cannot sing i do not have vocal cords"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "coolswag"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ghosty",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "...What?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "beep bop skdap bep"
+		},
+		{
+			"speed": 0.015,
+			"portrait": "ghosty",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "What did you say about my mom"
+		}
+	]
+}

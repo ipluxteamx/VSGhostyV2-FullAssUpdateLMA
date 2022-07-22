@@ -1,0 +1,153 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-1,
+				-50
+			],
+			"loop": false,
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "3d-blackthing left",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-27,
+				-65
+			],
+			"loop": false,
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "3d-blackthing down",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-46,
+				-50
+			],
+			"loop": false,
+			"anim": "singUP",
+			"fps": 24,
+			"name": "3d-blackthing up",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-62,
+				-77
+			],
+			"loop": false,
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "3d-blackthing right",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-70,
+				-40
+			],
+			"loop": false,
+			"anim": "idle",
+			"fps": 24,
+			"name": "3d-blackthing idle",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle-loop",
+			"indices": [
+				10,
+				11,
+				12,
+				12
+			],
+			"name": "3d-blackthing idle"
+		},
+		{
+			"offsets": [
+				-9,
+				10
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "singLEFT-loop",
+			"indices": [
+				12,
+				13,
+				14,
+				15
+			],
+			"name": "3d-blackthing left"
+		},
+		{
+			"offsets": [
+				0,
+				27
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "singRIGHT-loop",
+			"indices": [
+				15,
+				16,
+				17,
+				18
+			],
+			"name": "3d-blackthing right"
+		},
+		{
+			"offsets": [
+				-6,
+				50
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "singUP-loop",
+			"indices": [
+				56,
+				57,
+				58,
+				59
+			],
+			"name": "3d-blackthing up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				90,
+				-50
+			],
+			"anim": "hey",
+			"fps": 24,
+			"name": "3d-blackthing up",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/3d-blackthing",
+	"position": [
+		0,
+		230
+	],
+	"healthicon": "3dblackgoop",
+	"flip_x": false,
+	"healthbar_colors": [
+		20,
+		20,
+		20
+	],
+	"camera_position": [
+		-260,
+		80
+	],
+	"sing_duration": 6.1,
+	"scale": 1.7
+}

@@ -1,0 +1,53 @@
+{
+	"storyName": "Ghostin' on a Friday Night",
+	"difficulties": "Easy, Normal, Hard",
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"weekBefore": "week6",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"ghosty",
+		"bf",
+		"gf"
+	],
+	"songs": [
+		[
+			"Despair",
+			"ghosty",
+			[
+				160,
+				160,
+				160
+			]
+		],
+		[
+			"Disturbance",
+			"ghosty",
+			[
+				120,
+				120,
+				120
+			]
+		],
+		[
+			"Anger",
+			"ghosty",
+			[
+				100,
+				100,
+				100
+			]
+		],
+		[
+			"Fantomatique",
+			"ghosty",
+			[
+				20,
+				20,
+				20
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "Week G"
+}

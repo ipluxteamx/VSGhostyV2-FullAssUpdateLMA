@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="oldghosty.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Symbole 10000" x="0" y="0" width="82" height="104" frameX="0" frameY="0" frameWidth="82" frameHeight="106"/>
+	<SubTexture name="Symbole 10001" x="82" y="0" width="82" height="104" frameX="0" frameY="-1" frameWidth="82" frameHeight="106"/>
+	<SubTexture name="Symbole 10002" x="164" y="0" width="82" height="103" frameX="0" frameY="-3" frameWidth="82" frameHeight="106"/>
+	<SubTexture name="Symbole 10003" x="246" y="0" width="82" height="104" frameX="0" frameY="-1" frameWidth="82" frameHeight="106"/>
+	<SubTexture name="Symbole 10004" x="0" y="0" width="82" height="104" frameX="0" frameY="0" frameWidth="82" frameHeight="106"/>
+	<SubTexture name="Symbole 10005" x="0" y="0" width="82" height="104" frameX="0" frameY="0" frameWidth="82" frameHeight="106"/>
+	<SubTexture name="Symbole 10006" x="0" y="0" width="82" height="104" frameX="0" frameY="-1" frameWidth="82" frameHeight="106"/>
+	<SubTexture name="Symbole 10007" x="0" y="0" width="82" height="104" frameX="0" frameY="0" frameWidth="82" frameHeight="106"/>
+	<SubTexture name="Symbole 10008" x="0" y="0" width="82" height="104" frameX="0" frameY="0" frameWidth="82" frameHeight="106"/>
+	<SubTexture name="Symbole 10009" x="0" y="0" width="82" height="104" frameX="0" frameY="0" frameWidth="82" frameHeight="106"/>
+	<SubTexture name="Symbole 20000" x="328" y="0" width="95" height="113" frameX="0" frameY="0" frameWidth="97" frameHeight="113"/>
+	<SubTexture name="Symbole 20001" x="423" y="0" width="96" height="112" frameX="0" frameY="-1" frameWidth="97" frameHeight="113"/>
+	<SubTexture name="Symbole 20002" x="519" y="0" width="97" height="111" frameX="0" frameY="-2" frameWidth="97" frameHeight="113"/>
+	<SubTexture name="Symbole 20003" x="616" y="0" width="96" height="112" frameX="0" frameY="-1" frameWidth="97" frameHeight="113"/>
+	<SubTexture name="Symbole 20004" x="328" y="0" width="95" height="113" frameX="0" frameY="0" frameWidth="97" frameHeight="113"/>
+	<SubTexture name="Symbole 30000" x="712" y="0" width="96" height="113" frameX="-2" frameY="0" frameWidth="98" frameHeight="114"/>
+	<SubTexture name="Symbole 30001" x="808" y="0" width="97" height="114" frameX="-1" frameY="0" frameWidth="98" frameHeight="114"/>
+	<SubTexture name="Symbole 30002" x="905" y="0" width="97" height="114" frameX="0" frameY="0" frameWidth="98" frameHeight="114"/>
+	<SubTexture name="Symbole 30003" x="1002" y="0" width="97" height="114" frameX="-1" frameY="0" frameWidth="98" frameHeight="114"/>
+	<SubTexture name="Symbole 30004" x="712" y="0" width="96" height="113" frameX="-2" frameY="0" frameWidth="98" frameHeight="114"/>
+	<SubTexture name="Symbole 40000" x="1099" y="0" width="79" height="148" frameX="0" frameY="-6" frameWidth="79" frameHeight="154"/>
+	<SubTexture name="Symbole 40001" x="1099" y="0" width="79" height="148" frameX="0" frameY="-4" frameWidth="79" frameHeight="154"/>
+	<SubTexture name="Symbole 40002" x="1178" y="0" width="79" height="151" frameX="0" frameY="0" frameWidth="79" frameHeight="154"/>
+	<SubTexture name="Symbole 40003" x="1178" y="0" width="79" height="151" frameX="0" frameY="-3" frameWidth="79" frameHeight="154"/>
+	<SubTexture name="Symbole 40004" x="1099" y="0" width="79" height="148" frameX="0" frameY="-6" frameWidth="79" frameHeight="154"/>
+	<SubTexture name="Symbole 50000" x="1257" y="0" width="98" height="67" frameX="0" frameY="0" frameWidth="98" frameHeight="69"/>
+	<SubTexture name="Symbole 50001" x="1355" y="0" width="98" height="66" frameX="0" frameY="-2" frameWidth="98" frameHeight="69"/>
+	<SubTexture name="Symbole 50002" x="1453" y="0" width="98" height="65" frameX="0" frameY="-4" frameWidth="98" frameHeight="69"/>
+	<SubTexture name="Symbole 50003" x="1355" y="0" width="98" height="66" frameX="0" frameY="-2" frameWidth="98" frameHeight="69"/>
+	<SubTexture name="Symbole 50004" x="1257" y="0" width="98" height="67" frameX="0" frameY="0" frameWidth="98" frameHeight="69"/>
+</TextureAtlas>

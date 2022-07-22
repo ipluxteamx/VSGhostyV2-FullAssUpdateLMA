@@ -1,0 +1,249 @@
+{
+	"song": {
+		"speed": 2.9,
+		"stage": "stage",
+		"player1": "bf",
+		"player2": "dad",
+		"player3": null,
+		"events": [
+			[
+				19200,
+				[
+					[
+						"Change Character",
+						"dad",
+						"pico"
+					]
+				]
+			],
+			[
+				28800,
+				[
+					[
+						"Change Character",
+						"dad",
+						"senpai"
+					]
+				]
+			],
+			[
+				31200,
+				[
+					[
+						"Change Character",
+						"dad",
+						"spooky"
+					]
+				]
+			],
+			[
+				36000,
+				[
+					[
+						"Add Camera Zoom",
+						"0.02",
+						"0.035"
+					]
+				]
+			],
+			[
+				36300,
+				[
+					[
+						"Add Camera Zoom",
+						"0.02",
+						"0.035"
+					]
+				]
+			],
+			[
+				36600,
+				[
+					[
+						"Add Camera Zoom",
+						"0.02",
+						"0.035"
+					]
+				]
+			],
+			[
+				36900,
+				[
+					[
+						"Add Camera Zoom",
+						"0.02",
+						"0.035"
+					]
+				]
+			],
+			[
+				37200,
+				[
+					[
+						"Add Camera Zoom",
+						"0.02",
+						"0.035"
+					]
+				]
+			],
+			[
+				37500,
+				[
+					[
+						"Add Camera Zoom",
+						"0.02",
+						"0.035"
+					]
+				]
+			],
+			[
+				37800,
+				[
+					[
+						"Add Camera Zoom",
+						"0.02",
+						"0.035"
+					]
+				]
+			],
+			[
+				38100,
+				[
+					[
+						"Add Camera Zoom",
+						"0.02",
+						"0.035"
+					]
+				]
+			],
+			[
+				38325,
+				[
+					[
+						"Change Character",
+						"dad",
+						"dad"
+					]
+				]
+			],
+			[
+				38400,
+				[
+					[
+						"Add Camera Zoom",
+						"0.02",
+						"0.035"
+					]
+				]
+			],
+			[
+				39000,
+				[
+					[
+						"Change Character",
+						"dad",
+						"pico"
+					]
+				]
+			],
+			[
+				39600,
+				[
+					[
+						"Change Character",
+						"dad",
+						"senpai"
+					]
+				]
+			],
+			[
+				40200,
+				[
+					[
+						"Change Character",
+						"dad",
+						"spooky"
+					]
+				]
+			],
+			[
+				42000,
+				[
+					[
+						"Change Character",
+						"dad",
+						"dad"
+					]
+				]
+			],
+			[
+				42300,
+				[
+					[
+						"Change Character",
+						"dad",
+						"pico"
+					]
+				]
+			],
+			[
+				42600,
+				[
+					[
+						"Change Character",
+						"dad",
+						"senpai"
+					]
+				]
+			],
+			[
+				42900,
+				[
+					[
+						"Change Character",
+						"dad",
+						"spooky"
+					]
+				]
+			],
+			[
+				43200,
+				[
+					[
+						"Change Character",
+						"dad",
+						"dad"
+					]
+				]
+			],
+			[
+				52800,
+				[
+					[
+						"Change Character",
+						"dad",
+						"senpai"
+					]
+				]
+			],
+			[
+				55200,
+				[
+					[
+						"Change Character",
+						"dad",
+						"spooky"
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": "noteSplashes",
+		"validScore": false,
+		"gfVersion": "gf",
+		"bpm": 200,
+		"arrowSkin": "",
+		"needsVoices": true,
+		"song": "Soinc"
+	}
+}

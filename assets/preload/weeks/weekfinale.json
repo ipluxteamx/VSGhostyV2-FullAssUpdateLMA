@@ -1,0 +1,25 @@
+{
+	"storyName": "SUssy Impostor",
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"weekBefore": "weekb",
+	"startUnlocked": false,
+	"weekCharacters": [
+		"bf",
+		"bf",
+		"gf"
+	],
+	"songs": [
+		[
+			"Redemption",
+			"bf",
+			[
+				50,
+				50,
+				170
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "Week Finale"
+}
