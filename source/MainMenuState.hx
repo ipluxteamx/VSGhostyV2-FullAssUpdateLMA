@@ -159,7 +159,10 @@ class MainMenuState extends MusicBeatState
 			if(optionShit.length < 6) scr = 0;
 			menuItem.scrollFactor.set(0, scr);
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-			menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
+			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.12));
+			menuItem.scale.x = 0.17;
+			menuItem.scale.y = 0.17;
+			
 			menuItem.updateHitbox();
 			//curoffset = curoffset + 20;
 
