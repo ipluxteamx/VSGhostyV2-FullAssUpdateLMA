@@ -548,12 +548,11 @@ class PlayState extends MusicBeatState
 				var bg:BGSprite = new BGSprite('backgrounds/bgGod', -2800, -5000, 0.9, 0.9);
 				bg.setGraphicSize(Std.int(bg.width * 10));
 				bg.updateHitbox();
+				add(bg);
 
 				var ground:BGSprite = new BGSprite('backgrounds/groundGod', -600, 600, 1, 1);
 				ground.setGraphicSize(Std.int(bg.width * 1.8));
 				ground.updateHitbox();
-
-				add(bg);
 				add(ground);
 
 				addShaderToCamera('bgGod', new GlitchEffect(0.025, 0.2, 0.2));
