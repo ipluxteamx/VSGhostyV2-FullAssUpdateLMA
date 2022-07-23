@@ -104,7 +104,7 @@ class MainMenuState extends MusicBeatState
         	emitterthingy.add(particle);
 			add(emitterthingy);
 
-			emitterthingy.start(false, 3, 0.1);
+			emitterthingy.start(false, 3, 1);
 
         if(ClientPrefs.themedmainmenubg == true) {
 
@@ -165,8 +165,8 @@ class MainMenuState extends MusicBeatState
 			//menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
-			menuItem.screenCenter(X * 1.4);
-			menuItem.screenCenter(Y * 1.4);
+			menuItem.screenCenter(X);
+			menuItem.screenCenter(Y);
 			menuItems.add(menuItem);
 			/*var scr:Float = (optionShit.length - 4) * 0.135;
 			if(optionShit.length < 6) scr = 0;
