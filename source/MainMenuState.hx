@@ -250,6 +250,35 @@ class MainMenuState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+
+		if (optionShit[curSelected] == 'story_mode')
+			{
+				menuItem[1].visible = false;
+				menuItem[2].visible = false;
+				menuItem[3].visible = false;
+				menuItem[0].visible = true;
+			}
+			if (optionShit[curSelected] == 'song_selector')
+				{
+					menuItem[0].visible = false;
+					menuItem[2].visible = false;
+					menuItem[3].visible = false;
+					menuItem[1].visible = true;
+				}
+				if (optionShit[curSelected] == 'credits')
+					{
+						menuItem[0].visible = false;
+						menuItem[1].visible = false;
+						menuItem[3].visible = false;
+						menuItem[2].visible = true;
+					}
+					if (optionShit[curSelected] == 'options')
+						{
+							menuItem[2].visible = false;
+							menuItem[1].visible = false;
+							menuItem[0].visible = false;
+							menuItem[3].visible = true;
+						}
 		if (FlxG.sound.music.volume < 0.8)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
