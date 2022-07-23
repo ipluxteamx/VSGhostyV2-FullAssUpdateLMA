@@ -90,7 +90,7 @@ class MainMenuState extends MusicBeatState
 		var emitterthingy = new FlxEmitter(100, 100);
 
 		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
-        var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
+        var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBGSelect'));
         bg.scrollFactor.set(0, yScroll);
         bg.setGraphicSize(Std.int(bg.width * 1.175));
         bg.updateHitbox();
@@ -156,12 +156,10 @@ class MainMenuState extends MusicBeatState
 
 		for (i in 0...optionShit.length)
 		{
-			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-			var menuItem:FlxSprite = new FlxSprite(curoffset, (i * 140) + offset);
-			menuItem.scale.x = 0.01;
-			menuItem.scale.y = 0.01;
-			menuItem.x = 200;
-			menuItem.y = 100;
+			//var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
+			var menuItem:FlxSprite = new FlxSprite(0, 0);
+			menuItem.scale.x = 0.5;
+			menuItem.scale.y = 0.5;
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/gh_' + optionShit[i]);
 			menuItem.animation.addByPrefix('idle', "idle", 24);
 			//menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
@@ -174,7 +172,6 @@ class MainMenuState extends MusicBeatState
 			if(optionShit.length < 6) scr = 0;
 			menuItem.scrollFactor.set(0, scr);*/
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.12));
 			//menuItem.scale.x = 0.17;
 			//menuItem.scale.y = 0.17;
 			
@@ -182,7 +179,7 @@ class MainMenuState extends MusicBeatState
 			//curoffset = curoffset + 20;
 		}
 
-		FlxG.camera.follow(camFollowPos, null, 1);
+		//FlxG.camera.follow(camFollowPos, null, 1);
 
 		/*var versionShit:FlxText = new FlxText(FlxG.width * 0.7, FlxG.height - 44, 0, "OS Engine v" + osEngineVersion + " - Modded Psych Engine", 12);
 		versionShit.scrollFactor.set();
@@ -263,24 +260,24 @@ class MainMenuState extends MusicBeatState
 		}
 		if (optionShit[curSelected] == 'song_selector')
 		{
-			menuItems.members[0].visible = false;
 			menuItems.members[1].visible = true;
+			menuItems.members[0].visible = false;
 			menuItems.members[2].visible = false;
 			menuItems.members[3].visible = false;
 		}
 		if (optionShit[curSelected] == 'credits')
 		{
+			menuItems.members[2].visible = true;
 			menuItems.members[0].visible = false;
 			menuItems.members[1].visible = false;
-			menuItems.members[2].visible = true;
 			menuItems.members[3].visible = false;
 		}
 		if (optionShit[curSelected] == 'options')
 		{
+			menuItems.members[3].visible = true;
 			menuItems.members[0].visible = false;
 			menuItems.members[1].visible = false;
 			menuItems.members[2].visible = false;
-			menuItems.members[3].visible = true;
 		}
 
 		if (FlxG.sound.music.volume < 0.8)
@@ -294,15 +291,15 @@ class MainMenuState extends MusicBeatState
 
 		if (!selectedSomethin)
 		{
-			if (controls.UI_UP_P)
+			if (controls.UI_LEFT_P)
 			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				FlxG.sound.play(Paths.sound('scrollMenu'), 0.8);
 				changeItem(-1);
 			}
 
-			if (controls.UI_DOWN_P)
+			if (controls.UI_RIGHT_P)
 			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				FlxG.sound.play(Paths.sound('scrollMenu'), 0.8);
 				changeItem(1);
 			}
 
@@ -431,14 +428,14 @@ class MainMenuState extends MusicBeatState
 		{
 			spr.animation.play('idle');
 			//spr.updateHitbox();
-			spr.scale.x = 0.7;
-			spr.scale.y = 0.7;
+			//spr.scale.x = 0.7;
+			//spr.scale.y = 0.7;
 
 			if (spr.ID == curSelected)
 			{
 				//spr.animation.play('selected');
-				spr.scale.x = 1.0;
-				spr.scale.y = 1.0;
+				/*spr.scale.x = 1.0;
+				spr.scale.y = 1.0;*/
 				var add:Float = 0;
 				if(menuItems.length > 4) {
 					add = menuItems.length * 8;

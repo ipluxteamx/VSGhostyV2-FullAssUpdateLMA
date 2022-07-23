@@ -640,7 +640,7 @@ class TitleState extends MusicBeatState
 			{
 				case 1:
 					//FlxG.sound.music.stop();
-					FlxG.sound.playMusic(Paths.music('freakyMenu'), 0.7);
+					FlxG.sound.playMusic(Paths.music('freakyMenu'), 0.5);
 					//FlxG.sound.music.fadeIn(4, 0, 0.7);
 					createCoolText(['Mod by'], 45);
 				case 2:
@@ -664,7 +664,7 @@ class TitleState extends MusicBeatState
 				case 12:
 					deleteCoolText();
 				case 13:
-					addMoreText('Friday Night Funkin');
+					createCoolText(['Friday Night Funkin']);
 				// credTextShit.visible = true;
 				case 14:
 					addMoreText('V.S. Ghosty V2');
@@ -672,7 +672,7 @@ class TitleState extends MusicBeatState
 				case 15:
 					addMoreText('The Full Ass Update'); // credTextShit.text += '\nFunkin';
 
-				case 16:
+				case 17:
 					skipIntro();
 			}
 		}
