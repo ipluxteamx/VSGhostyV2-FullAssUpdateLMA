@@ -39,7 +39,7 @@ class MainMenuState extends MusicBeatState
 		'story_mode',
 		'song_selector',
 		//#if MODS_ALLOWED 'mods', #end
-		#if ACHIEVEMENTS_ALLOWED 'awards', #end
+		//#if ACHIEVEMENTS_ALLOWED 'awards', #end REMINDER TO UNCOMMENT THIS LATER
 		'credits',
 		//'donate',
 		//'discord', you can go to discord now by pressing ctrl in credits
@@ -132,7 +132,7 @@ class MainMenuState extends MusicBeatState
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
 
-		var scale:Float = 0.45;
+		//var scale:Float = 0.45;
 		/*if(optionShit.length > 6) {
 			scale = 6 / optionShit.length;
 		}*/
@@ -146,8 +146,8 @@ class MainMenuState extends MusicBeatState
 		{
 			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
 			var menuItem:FlxSprite = new FlxSprite(curoffset, (i * 140) + offset);
-			menuItem.scale.x = scale;
-			menuItem.scale.y = scale;
+			menuItem.scale.x = 0.45;
+			menuItem.scale.y = 0.45;
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/gh_' + optionShit[i]);
 			menuItem.animation.addByPrefix('idle', "idle", 24);
 			//menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
@@ -156,13 +156,13 @@ class MainMenuState extends MusicBeatState
 			menuItem.screenCenter(X);
 			menuItem.screenCenter(Y);
 			menuItems.add(menuItem);
-			var scr:Float = (optionShit.length - 4) * 0.135;
+			/*var scr:Float = (optionShit.length - 4) * 0.135;
 			if(optionShit.length < 6) scr = 0;
-			menuItem.scrollFactor.set(0, scr);
+			menuItem.scrollFactor.set(0, scr);*/
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
 			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.12));
-			menuItem.scale.x = 0.17;
-			menuItem.scale.y = 0.17;
+			//menuItem.scale.x = 0.17;
+			//menuItem.scale.y = 0.17;
 			
 			menuItem.updateHitbox();
 			//curoffset = curoffset + 20;
