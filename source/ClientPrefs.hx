@@ -43,7 +43,7 @@ class ClientPrefs {
 	public static var holdNoteVisibility:Float = 1;
 	public static var opponentUnderlaneVisibility:Float = 0;
 	public static var noteSkinSettings:String = 'Classic';
-	public static var pauseMusic:String = 'Tea Time';
+	public static var pauseMusic:String = 'Dreaming';
 	public static var showcaseMode:Bool = false;
 	public static var cameramoveonnotes:Bool = true;
 	public static var removePerfects:Bool = false;
