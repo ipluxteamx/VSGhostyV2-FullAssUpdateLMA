@@ -25,8 +25,10 @@ class Alphabet extends FlxSpriteGroup
 	public var yMult:Float = 120;
 	public var xAdd:Float = 0;
 	public var yAdd:Float = 0;
+	public var targetX:Float = 0;
+	public var itemType:String = ""; // abcdefghijklmnopqrstuvwxyz now you know the abc and i am in your walls :)
 	public var isMenuItem:Bool = false;
-	public var textSize:Float = 1.0;
+	public var textSize:Float = 0.925;
 
 	public var text:String = "";
 
