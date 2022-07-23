@@ -224,6 +224,19 @@ class TitleState extends MusicBeatState
 			});
 		}
 		#end
+
+		var bg:FlxSprite = new FlxSprite();
+
+		if (titleJSON.backgroundSprite != null && titleJSON.backgroundSprite.length > 0 && titleJSON.backgroundSprite != "none"){
+			bg.loadGraphic(Paths.image(titleJSON.backgroundSprite));
+		} else {
+			bg.makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		}
+
+		// bg.antialiasing = ClientPrefs.globalAntialiasing;
+		// bg.setGraphicSize(Std.int(bg.width * 0.6));
+		// bg.updateHitbox();
+		add(bg);
 	}
 
 	var logoBl:FlxSprite;
@@ -265,19 +278,6 @@ class TitleState extends MusicBeatState
 
 		Conductor.changeBPM(titleJSON.bpm);
 		persistentUpdate = true;
-
-		var bg:FlxSprite = new FlxSprite();
-
-		if (titleJSON.backgroundSprite != null && titleJSON.backgroundSprite.length > 0 && titleJSON.backgroundSprite != "none"){
-			bg.loadGraphic(Paths.image(titleJSON.backgroundSprite));
-		}else{
-			bg.makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
-		}
-
-		// bg.antialiasing = ClientPrefs.globalAntialiasing;
-		// bg.setGraphicSize(Std.int(bg.width * 0.6));
-		// bg.updateHitbox();
-		add(bg);
 
 		logoBl = new FlxSprite(titleJSON.titlex, titleJSON.titley);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
@@ -340,7 +340,7 @@ class TitleState extends MusicBeatState
 		add(logoBl);
 		logoBl.shader = swagShader.shader;
 
-		titleText = new FlxSprite(titleJSON.startx, titleJSON.starty);
+		/*titleText = new FlxSprite(titleJSON.startx, titleJSON.starty);
 		#if (desktop && MODS_ALLOWED)
 		var path = "mods/" + Paths.currentModDirectory + "/images/titleEnter.png";
 		//trace(path, FileSystem.exists(path));
@@ -380,7 +380,7 @@ class TitleState extends MusicBeatState
 		titleText.animation.play('idle');
 		titleText.updateHitbox();
 		// titleText.screenCenter(X);
-		add(titleText);
+		add(titleText);*/
 
 		var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('logo'));
 		logo.screenCenter();
@@ -491,16 +491,16 @@ class TitleState extends MusicBeatState
 				
 				timer = FlxEase.quadInOut(timer);
 				
-				titleText.color = FlxColor.interpolate(titleTextColors[0], titleTextColors[1], timer);
-				titleText.alpha = FlxMath.lerp(titleTextAlphas[0], titleTextAlphas[1], timer);
+				/*titleText.color = FlxColor.interpolate(titleTextColors[0], titleTextColors[1], timer);
+				titleText.alpha = FlxMath.lerp(titleTextAlphas[0], titleTextAlphas[1], timer);*/
 			}
 			
 			if(pressedEnter)
 			{
-				titleText.color = FlxColor.WHITE;
+				/*titleText.color = FlxColor.WHITE;
 				titleText.alpha = 1;
 				
-				if(titleText != null) titleText.animation.play('press');
+				if(titleText != null) titleText.animation.play('press');*/
 
 				FlxG.camera.flash(ClientPrefs.flashing ? FlxColor.WHITE : 0x4CFFFFFF, 1);
 				FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
@@ -588,6 +588,8 @@ class TitleState extends MusicBeatState
 			var money:Alphabet = new Alphabet(0, 0, textArray[i], true, false);
 			money.screenCenter(X);
 			money.y += (i * 60) + 200 + offset;
+			money.scale.x = 0.75;
+			money.scale.y = 0.75;
 			if(credGroup != null && textGroup != null) {
 				credGroup.add(money);
 				textGroup.add(money);
@@ -638,24 +640,22 @@ class TitleState extends MusicBeatState
 			{
 				case 1:
 					//FlxG.sound.music.stop();
-					FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
-					FlxG.sound.music.fadeIn(4, 0, 0.7);
-					createCoolText(['OS Engine by'], 45);
+					FlxG.sound.playMusic(Paths.music('freakyMenu'), 0.7);
+					//FlxG.sound.music.fadeIn(4, 0, 0.7);
+					createCoolText(['Mod by'], 45);
 				case 2:
-					addMoreText('weuz_', 45);
-					addMoreText('nelifs', 45);
-					addMoreText('Cooljer', 45);
+					addMoreText('The Ghosted Team', 45);
 				case 3:
 					deleteCoolText();
 					createCoolText(['Forked', 'from'], 15);
 				case 4:
-					addMoreText('Psych Engine', 45);
+					addMoreText('OS Engine', 45);
 				case 6:
 					deleteCoolText();
-					createCoolText(['Psych Engine by'], 45);
-					addMoreText('Shadow Mario',45);
-					addMoreText('RiverOaken',45);
-					addMoreText('bbpanzu',45);
+					createCoolText(['Engine by'], 45);
+					addMoreText('Shadow Mario, RiverOaken',45);
+					addMoreText('bbpanzu, weuz_',45);
+					addMoreText('nelifs, Cooljer', 45);
 				case 8:
 					deleteCoolText();
 					createCoolText([curWacky[0]]);
@@ -664,13 +664,13 @@ class TitleState extends MusicBeatState
 				case 12:
 					deleteCoolText();
 				case 13:
-					addMoreText('Friday');
+					addMoreText('Friday Night Funkin');
 				// credTextShit.visible = true;
 				case 14:
-					addMoreText('Night');
+					addMoreText('V.S. Ghosty V2');
 				// credTextShit.text += '\nNight';
 				case 15:
-					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
+					addMoreText('The Full Ass Update'); // credTextShit.text += '\nFunkin';
 
 				case 16:
 					skipIntro();

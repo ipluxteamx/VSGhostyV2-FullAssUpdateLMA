@@ -267,13 +267,13 @@ class MainMenuState extends MusicBeatState
 
 			if (controls.ACCEPT)
 			{
-				if (optionShit[curSelected] == 'donate') {
+				/*if (optionShit[curSelected] == 'donate') {
 					CoolUtil.browserLoad('https://ninja-muffin24.itch.io/funkin');
 				} else if (optionShit[curSelected] == customOption) {
 					CoolUtil.browserLoad(customOptionLink);
-				}
-				else
-				{
+				}*/
+				/*else
+				{*/
 					selectedSomethin = true;
 					FlxG.sound.play(Paths.sound('confirmMenu'));
 
@@ -348,7 +348,7 @@ class MainMenuState extends MusicBeatState
 						}
 					});
 				}
-			}
+			//}
 			#if desktop
 			else if (FlxG.keys.anyJustPressed(debugKeys))
 			{
