@@ -23,6 +23,8 @@ import lime.app.Application;
 import Achievements;
 import editors.MasterEditorMenu;
 import flixel.input.keyboard.FlxKey;
+import flixel.effects.particles.FlxEmitter;
+import flixel.effects.particles.FlxParticle;
 
 using StringTools;
 
@@ -85,6 +87,8 @@ class MainMenuState extends MusicBeatState
 
 		persistentUpdate = persistentDraw = true;
 
+		var emitterthingy = new FlxEmitter(100, 100);
+
 		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
         var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
         bg.scrollFactor.set(0, yScroll);
@@ -93,6 +97,14 @@ class MainMenuState extends MusicBeatState
         bg.screenCenter();
         bg.antialiasing = ClientPrefs.globalAntialiasing;
         add(bg);
+
+		var particle = new FlxParticle();
+        	particle.makeGraphic(2, 2, 0xFFFFFFFF);
+        	particle.exists = false;
+        	emitterthingy.add(particle);
+			add(emitterthingy);
+
+			emitterthingy.start(false, 3, 0.1);
 
         if(ClientPrefs.themedmainmenubg == true) {
 
