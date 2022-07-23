@@ -99,12 +99,12 @@ class MainMenuState extends MusicBeatState
         add(bg);
 
 		var particle = new FlxParticle();
-        	particle.makeGraphic(2, 2, 0xFFFFFFFF);
+        	particle.makeGraphic(6, 6, 0xFFFFFFFF);
         	particle.exists = false;
         	emitterthingy.add(particle);
 			add(emitterthingy);
 
-			emitterthingy.start(false, 3, 1);
+			emitterthingy.start(false, 10, 1);
 
         if(ClientPrefs.themedmainmenubg == true) {
 
