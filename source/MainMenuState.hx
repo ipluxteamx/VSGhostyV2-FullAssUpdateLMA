@@ -146,8 +146,8 @@ class MainMenuState extends MusicBeatState
 		{
 			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
 			var menuItem:FlxSprite = new FlxSprite(curoffset, (i * 140) + offset);
-			menuItem.scale.x = 0.45;
-			menuItem.scale.y = 0.45;
+			menuItem.scale.x = 0.01;
+			menuItem.scale.y = 0.01;
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/gh_' + optionShit[i]);
 			menuItem.animation.addByPrefix('idle', "idle", 24);
 			//menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
@@ -241,33 +241,34 @@ class MainMenuState extends MusicBeatState
 	{
 
 		if (optionShit[curSelected] == 'story_mode')
-			{
-				menuItem[1].visible = false;
-				menuItem[2].visible = false;
-				menuItem[3].visible = false;
-				menuItem[0].visible = true;
-			}
-			if (optionShit[curSelected] == 'song_selector')
-				{
-					menuItem[0].visible = false;
-					menuItem[2].visible = false;
-					menuItem[3].visible = false;
-					menuItem[1].visible = true;
-				}
-				if (optionShit[curSelected] == 'credits')
-					{
-						menuItem[0].visible = false;
-						menuItem[1].visible = false;
-						menuItem[3].visible = false;
-						menuItem[2].visible = true;
-					}
-					if (optionShit[curSelected] == 'options')
-						{
-							menuItem[2].visible = false;
-							menuItem[1].visible = false;
-							menuItem[0].visible = false;
-							menuItem[3].visible = true;
-						}
+		{
+			menuItems.members[0].visible = true;
+			menuItems.members[1].visible = false;
+			menuItems.members[2].visible = false;
+			menuItems.members[3].visible = false;
+		}
+		if (optionShit[curSelected] == 'song_selector')
+		{
+			menuItems.members[0].visible = false;
+			menuItems.members[1].visible = true;
+			menuItems.members[2].visible = false;
+			menuItems.members[3].visible = false;
+		}
+		if (optionShit[curSelected] == 'credits')
+		{
+			menuItems.members[0].visible = false;
+			menuItems.members[1].visible = false;
+			menuItems.members[2].visible = true;
+			menuItems.members[3].visible = false;
+		}
+		if (optionShit[curSelected] == 'options')
+		{
+			menuItems.members[0].visible = false;
+			menuItems.members[1].visible = false;
+			menuItems.members[2].visible = false;
+			menuItems.members[3].visible = true;
+		}
+
 		if (FlxG.sound.music.volume < 0.8)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
