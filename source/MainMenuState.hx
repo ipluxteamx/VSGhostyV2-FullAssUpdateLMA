@@ -132,7 +132,7 @@ class MainMenuState extends MusicBeatState
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
 
-		var scale:Float = 0.7;
+		var scale:Float = 0.45;
 		/*if(optionShit.length > 6) {
 			scale = 6 / optionShit.length;
 		}*/
@@ -153,7 +153,8 @@ class MainMenuState extends MusicBeatState
 			//menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
-			//menuItem.screenCenter(X);
+			menuItem.screenCenter(X);
+			menuItem.screenCenter(Y);
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.135;
 			if(optionShit.length < 6) scr = 0;
@@ -162,18 +163,6 @@ class MainMenuState extends MusicBeatState
 			menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
 			menuItem.updateHitbox();
 			//curoffset = curoffset + 20;
-
-			switch(i)
-			{
-				case 0:
-					menuItem.x = 100;
-					case 1:
-						menuItem.x = 200;
-						case 2:
-							menuItem.x = 300;
-							case 3:
-								menuItem.x = 400;
-			}
 		}
 
 		FlxG.camera.follow(camFollowPos, null, 1);
