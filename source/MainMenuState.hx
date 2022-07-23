@@ -17,10 +17,8 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import ColorblindFilters;
-#if MODS_ALLOWED
 import sys.FileSystem;
 import sys.io.File;
-#end
 import lime.app.Application;
 import Achievements;
 import editors.MasterEditorMenu;
@@ -40,7 +38,7 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'story_mode',
 		'song_selector',
-		#if MODS_ALLOWED 'mods', #end
+		//#if MODS_ALLOWED 'mods', #end
 		#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
 		//'donate',
@@ -48,10 +46,10 @@ class MainMenuState extends MusicBeatState
 		'options'
 	];
 
-	#if MODS_ALLOWED
+	/*#if MODS_ALLOWED
 	var customOption:String;
 	var	customOptionLink:String;
-	#end
+	#end*/
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
@@ -60,9 +58,9 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
-		#if MODS_ALLOWED
+		/*#if MODS_ALLOWED
 		Paths.pushGlobalMods();
-		#end
+		#end*/
 		WeekData.loadTheFirstEnabledMod();
 		if (ClientPrefs.colorblindMode != null) ColorblindFilters.applyFiltersOnGame(); // applies colorbind filters, ok?
 
@@ -140,9 +138,9 @@ class MainMenuState extends MusicBeatState
 		}*/
 
 		var curoffset:Float = 100;
-		#if MODS_ALLOWED
+		/*#if MODS_ALLOWED
 		pushModMenuItemsToList(Paths.currentModDirectory);
-		#end
+		#end*/
 
 		for (i in 0...optionShit.length)
 		{
@@ -151,9 +149,9 @@ class MainMenuState extends MusicBeatState
 			menuItem.scale.x = scale;
 			menuItem.scale.y = scale;
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/gh_' + optionShit[i]);
-			//menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
+			menuItem.animation.addByPrefix('idle', "idle", 24);
 			//menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
-			//menuItem.animation.play('idle');
+			menuItem.animation.play('idle');
 			menuItem.ID = i;
 			//menuItem.screenCenter(X);
 			menuItems.add(menuItem);
@@ -197,7 +195,7 @@ class MainMenuState extends MusicBeatState
 		super.create();
 	}
 
-	#if MODS_ALLOWED
+	/*#if MODS_ALLOWED
 	private var modsAdded:Array<String> = [];
 	function pushModMenuItemsToList(folder:String)
 	{
@@ -220,7 +218,7 @@ class MainMenuState extends MusicBeatState
 		}
 		modsAdded.push(folder);
 	}
-	#end
+	#end*/
 
 
 	#if ACHIEVEMENTS_ALLOWED
@@ -335,10 +333,10 @@ class MainMenuState extends MusicBeatState
 										MusicBeatState.switchState(new StoryMenuState());
 									case 'song_selector':
 										MusicBeatState.switchState(new FreeplayState());
-									#if MODS_ALLOWED
+									/*#if MODS_ALLOWED
 									case 'mods':
 										MusicBeatState.switchState(new ModsMenuState()); 
-									#end
+									#end*/
 									case 'awards':
 										MusicBeatState.switchState(new AchievementsMenuState());
 									case 'credits':
@@ -386,7 +384,7 @@ class MainMenuState extends MusicBeatState
 
 			if (spr.ID == curSelected)
 			{
-				spr.animation.play('selected');
+				//spr.animation.play('selected');
 				spr.scale.x = 1.0;
 				spr.scale.y = 1.0;
 				var add:Float = 0;

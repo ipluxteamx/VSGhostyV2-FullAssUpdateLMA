@@ -1,0 +1,3 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="gh_story_mode.png"><SubTexture name="idle0000" x="0" y="0" width="1280" height="1280" frameX="0" frameY="0" frameWidth="1280" frameHeight="1280" />
+</TextureAtlas>
