@@ -1,0 +1,8 @@
+changes bf scroll side blah blah
+
+Value 1 = How fast do the arrows move?
+
+Value 2 =
+          Left = LeftScroll
+          Mid = MiddleScroll
+          Right = RightScroll (default.. i hope)

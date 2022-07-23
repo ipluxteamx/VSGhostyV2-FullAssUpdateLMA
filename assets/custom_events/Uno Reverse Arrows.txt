@@ -1,0 +1,6 @@
+your arrows are now in this order.
+RIGHT DOWN UP LEFT (have fun ;). )
+
+value 1 = how fast they transform
+value 2 = scroll position
+          (left, mid, right.)

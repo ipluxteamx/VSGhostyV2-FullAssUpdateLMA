@@ -85,7 +85,7 @@ function onUpdate()
         --setProperty('dahard.visible', false)
         playSound('scrollMenu', 2, 'move')
     end
-    if keyJustPressed('right') and curSel < 1 then
+    if keyJustPressed('right') and curSel < 2 then
         curSel = curSel + 1
         --setProperty('dahard.visible', false)
         playSound('scrollMenu', 2, 'move')

@@ -57,6 +57,8 @@ class MainMenuState extends MusicBeatState
 	var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
+	var rightArrow:FlxSprite;
+	var leftArrow:FlxSprite;
 
 	override function create()
 	{
@@ -99,16 +101,16 @@ class MainMenuState extends MusicBeatState
         add(bg);
 
 		var particle = new FlxParticle();
-        	particle.makeGraphic(6, 6, 0xFFFFFFFF);
+        	particle.makeGraphic(1920, 1080, 0xFFFFFFFF);
         	particle.exists = false;
         	emitterthingy.add(particle);
 			add(emitterthingy);
 
 			emitterthingy.start(false, 10, 1);
 
-        if(ClientPrefs.themedmainmenubg == true) {
+        //if(ClientPrefs.themedmainmenubg == true) {
 
-            var themedBg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
+            var themedBg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBGSelect'));
             themedBg.scrollFactor.set(0, yScroll);
             themedBg.setGraphicSize(Std.int(bg.width));
             themedBg.updateHitbox();
@@ -122,7 +124,7 @@ class MainMenuState extends MusicBeatState
             } else if(hours > 8) {
                 themedBg.loadGraphic(Paths.image('menuBG'));
             }
-        }
+        //}
 
         camFollow = new FlxObject(0, 0, 1, 1);
         camFollowPos = new FlxObject(0, 0, 1, 1);
@@ -167,8 +169,8 @@ class MainMenuState extends MusicBeatState
 			menuItem.ID = i;
 			menuItem.screenCenter(X);
 			menuItem.screenCenter(Y);
-			menuItem.x += 170;
-			menuItem.y += 140;
+			menuItem.x += 202.5;
+			menuItem.y += 197.5;
 			menuItems.add(menuItem);
 			/*var scr:Float = (optionShit.length - 4) * 0.135;
 			if(optionShit.length < 6) scr = 0;
@@ -180,6 +182,26 @@ class MainMenuState extends MusicBeatState
 			menuItem.updateHitbox();
 			//curoffset = curoffset + 20;
 		}
+
+		var ui_tex = Paths.getSparrowAtlas('campaign_menu_UI_assets');
+
+		leftArrow = new FlxSprite(100, 0);
+		leftArrow.frames = ui_tex;
+		leftArrow.animation.addByPrefix('idle', "arrow left");
+		leftArrow.animation.addByPrefix('press', "arrow push left");
+		leftArrow.animation.play('idle');
+		leftArrow.antialiasing = ClientPrefs.globalAntialiasing;
+		add(leftArrow);
+		leftArrow.screenCenter(Y);
+
+		rightArrow = new FlxSprite(FlxG.width - 145 , 0);
+		rightArrow.frames = ui_tex;
+		rightArrow.animation.addByPrefix('idle', 'arrow right');
+		rightArrow.animation.addByPrefix('press', "arrow push right");
+		rightArrow.animation.play('idle');
+		rightArrow.antialiasing = ClientPrefs.globalAntialiasing;
+		add(rightArrow);
+		rightArrow.screenCenter(Y);
 
 		//FlxG.camera.follow(camFollowPos, null, 1);
 
@@ -209,6 +231,17 @@ class MainMenuState extends MusicBeatState
 		}
 		#end
 
+		var textBG:FlxSprite = new FlxSprite(0, FlxG.height - 26).makeGraphic(FlxG.width, 26, 0xFF000000);
+		textBG.alpha = 0.6;
+		add(textBG);
+
+		var leText:String = "placeholder for thing~ theehee~!"; //TODO: delete this message i hate it with a burning passion
+		var size:Int = 18;
+
+		var text:FlxText = new FlxText(textBG.x, textBG.y + 4, FlxG.width, leText, size);
+		text.setFormat(Paths.font("vcr.ttf"), size, FlxColor.WHITE, RIGHT);
+		text.scrollFactor.set();
+		add(text);
 		super.create();
 	}
 
@@ -295,14 +328,20 @@ class MainMenuState extends MusicBeatState
 		{
 			if (controls.UI_LEFT_P)
 			{
+				leftArrow.animation.play('press');
 				FlxG.sound.play(Paths.sound('scrollMenu'), 0.8);
 				changeItem(-1);
+			} else {
+				leftArrow.animation.play('idle');
 			}
 
 			if (controls.UI_RIGHT_P)
 			{
+				rightArrow.animation.play('press');
 				FlxG.sound.play(Paths.sound('scrollMenu'), 0.8);
 				changeItem(1);
+			} else {
+				rightArrow.animation.play('idle');
 			}
 
 			if (controls.BACK)
@@ -446,5 +485,12 @@ class MainMenuState extends MusicBeatState
 				//spr.centerOffsets();
 			}
 		});
+	}
+
+	override function beatHit()
+	{
+		super.beatHit();
+		if (FlxG.camera.zoom < 1.35 && ClientPrefs.camZooms && curBeat % 1 == 0)
+			FlxG.camera.zoom += 0.015;
 	}
 }
