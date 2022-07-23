@@ -353,7 +353,11 @@ class MainMenuState extends MusicBeatState
 			else if (FlxG.keys.anyJustPressed(debugKeys))
 			{
 				selectedSomethin = true;
-				MusicBeatState.switchState(new MasterEditorMenu());
+				//MusicBeatState.switchState(new MasterEditorMenu());
+				PlayState.SONG = Song.loadFromJson("uh oh", "uh oh"); // you dun fucked up
+				FlxG.switchState(new PlayState());
+				FlxG.save.data.uhOhFound = true;
+				return;
 			}
 			#end
 		}
