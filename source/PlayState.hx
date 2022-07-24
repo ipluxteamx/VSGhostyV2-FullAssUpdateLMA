@@ -570,7 +570,7 @@ class PlayState extends MusicBeatState
 
 				addShaderToCamera('oh', new GlitchEffect(0.35, 0.2, 0.2));
 				addShaderToCamera('game', new VCRDistortionEffect(0.0025));
-				addShaderToCamera('hud', new VCRDistortionEffect(0.00005));
+				//addShaderToCamera('hud', new VCRDistortionEffect(0.00005));
 		}
 
 		/*switch(Paths.formatToSongPath(SONG.song))

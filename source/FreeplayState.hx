@@ -111,10 +111,20 @@ class FreeplayState extends MusicBeatState
 
 		for (i in 0...songs.length)
 		{
+			//var songText:Alphabet = new Alphabet(0, (70 * i - (i / 2)) + 30, songs[i].songName, true, false);
 			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false);
 			songText.isMenuItem = true;
 			songText.targetY = i;
-			grpSongs.add(songText);
+
+			Paths.currentModDirectory = songs[i].folder;
+
+			var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
+			icon.sprTracker = songText;
+			//icon.scale.set(0.55, 0.55);
+
+			// using a FlxGroup is too much fuss!
+			iconArray.push(icon);
+			add(icon);
 
 			if (songText.width > 980)
 			{
@@ -128,20 +138,24 @@ class FreeplayState extends MusicBeatState
 				//songText.updateHitbox();
 				//trace(songs[i].songName + ' new scale: ' + textScale);
 			}
+			
+			songText.itemType = 'Left';
 
-			Paths.currentModDirectory = songs[i].folder;
-			var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
-			icon.sprTracker = songText;
-
-			// using a FlxGroup is too much fuss!
-			iconArray.push(icon);
-			add(icon);
+			grpSongs.add(songText);
+			//icon.alpha = 0.625;
 
 			// songText.x += 40;
 			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
 			// songText.screenCenter(X);
 		}
 		WeekData.setDirectoryFromWeek();
+
+		var ghosty = new FlxSprite().loadGraphic(Paths.image('Ghosty_Menu'));
+		ghosty.antialiasing = ClientPrefs.globalAntialiasing;
+		add(ghosty);
+		ghosty.x = FlxG.width - (ghosty.width + 35);
+		ghosty.screenCenter(Y);
+		ghosty.y += 75;
 
 		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
 		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);

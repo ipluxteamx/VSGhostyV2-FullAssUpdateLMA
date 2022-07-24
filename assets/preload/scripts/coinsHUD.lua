@@ -14,9 +14,11 @@ function onUpdate()
 end
 
 function goodNoteHit(id, noteData, noteType, isSustainNote)
-	coin = coin + math.random(0, 1)
-	setDataFromSave('vsGhostyShop', 'coin', coin)
-	flushSaveData('vsGhostyShop')
+	if not botplay then
+        coin = coin + math.random(0, 1)
+	    setDataFromSave('vsGhostyShop', 'coin', coin)
+	    flushSaveData('vsGhostyShop')
+    end
 end
 
 -- Called after the note miss calculations

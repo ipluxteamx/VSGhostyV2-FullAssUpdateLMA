@@ -14,6 +14,7 @@ using StringTools;
 /**
  * Loosley based on FlxTypeText lolol
  */
+
 class Alphabet extends FlxSpriteGroup
 {
 	public var delay:Float = 0.05;
@@ -28,7 +29,7 @@ class Alphabet extends FlxSpriteGroup
 	public var targetX:Float = 0;
 	public var itemType:String = ""; // abcdefghijklmnopqrstuvwxyz now you know the abc and i am in your walls :)
 	public var isMenuItem:Bool = false;
-	public var textSize:Float = 0.925;
+	public var textSize:Float = 1;
 
 	public var text:String = "";
 
@@ -381,6 +382,10 @@ class Alphabet extends FlxSpriteGroup
 				x = FlxMath.lerp(y, (scaledY * 120) + (FlxG.height * 0.5), 0.16);
 				y = FlxMath.lerp(x, (targetY * 40) + 308, 0.16);
 				y += targetY;
+
+			case "Left":
+				x = 75;
+				y = FlxMath.lerp(y, (scaledY * 120) + (FlxG.height * 0.48), 0.16);
 
 			case "C-Shape":
 				y = FlxMath.lerp(y, (scaledY * 65) + (FlxG.height * 0.39), 0.16);

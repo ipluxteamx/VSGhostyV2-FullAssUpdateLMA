@@ -110,20 +110,20 @@ class MainMenuState extends MusicBeatState
 
         //if(ClientPrefs.themedmainmenubg == true) {
 
-            var themedBg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBGSelect'));
-            themedBg.scrollFactor.set(0, yScroll);
-            themedBg.setGraphicSize(Std.int(bg.width));
-            themedBg.updateHitbox();
-            themedBg.screenCenter();
-            themedBg.antialiasing = ClientPrefs.globalAntialiasing;
-            add(themedBg);
+		var themedBg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBGSelect'));
+		themedBg.scrollFactor.set(0, yScroll);
+		themedBg.setGraphicSize(Std.int(bg.width));
+		themedBg.updateHitbox();
+		themedBg.screenCenter();
+		themedBg.antialiasing = ClientPrefs.globalAntialiasing;
+		add(themedBg);
 
-            var hours:Int = Date.now().getHours();
-            if(hours > 18) {
-                themedBg.color = 0x545f8a; // 0x6939ff
-            } else if(hours > 8) {
-                themedBg.loadGraphic(Paths.image('menuBG'));
-            }
+		var hours:Int = Date.now().getHours();
+		if(hours > 18) {
+			themedBg.color = 0x233FA5; // 0x6939ff
+		} else if(hours > 8) {
+			themedBg.color = 0xB8B82B;
+		}
         //}
 
         camFollow = new FlxObject(0, 0, 1, 1);
@@ -183,7 +183,7 @@ class MainMenuState extends MusicBeatState
 			//curoffset = curoffset + 20;
 		}
 
-		var ui_tex = Paths.getSparrowAtlas('campaign_menu_UI_assets');
+		var ui_tex = Paths.getSparrowAtlas('menu_UI_assets');
 
 		leftArrow = new FlxSprite(100, 0);
 		leftArrow.frames = ui_tex;
@@ -203,7 +203,7 @@ class MainMenuState extends MusicBeatState
 		add(rightArrow);
 		rightArrow.screenCenter(Y);
 
-		//FlxG.camera.follow(camFollowPos, null, 1);
+		//FlxG.camera.follow(menuItems.members[0], null, 1);
 
 		/*var versionShit:FlxText = new FlxText(FlxG.width * 0.7, FlxG.height - 44, 0, "OS Engine v" + osEngineVersion + " - Modded Psych Engine", 12);
 		versionShit.scrollFactor.set();
@@ -490,7 +490,7 @@ class MainMenuState extends MusicBeatState
 	override function beatHit()
 	{
 		super.beatHit();
-		if (FlxG.camera.zoom < 1.35 && ClientPrefs.camZooms && curBeat % 1 == 0)
-			FlxG.camera.zoom += 0.015;
+
+
 	}
 }

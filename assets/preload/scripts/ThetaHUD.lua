@@ -67,6 +67,12 @@ function onCreatePost()
         setPropertyFromGroup("strumLineNotes", i, "scale.x", noteSize)
         setPropertyFromGroup("strumLineNotes", i, "scale.y", noteSize)
       end  
+
+      makeLuaSprite('scoreThing', '', getPropertyFromGroup('score-n-acc.y'), 0)
+      makeGraphic('scoreThing', screenWidth, getPropertyFromGroup('score-n-acc.height'), '000000')
+      setProperty('scoreThing', '.alpha', 0.425)
+      setObjectCamera('scoreThing', 'hud')
+      addLuaSprite('scoreThing', false)
 end
 
 function onSongStart()
