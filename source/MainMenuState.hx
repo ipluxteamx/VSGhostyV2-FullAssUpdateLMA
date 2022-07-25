@@ -285,6 +285,9 @@ class MainMenuState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+		for (i in 0...menuItems.members.length) {
+			menuItems.members[i].y = FlxMath.lerp(menuItems.members[i].y - 5, menuItems.members[i].y + 5, 1);
+		}
 
 		if (optionShit[curSelected] == 'story_mode')
 		{
