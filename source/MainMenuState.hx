@@ -25,6 +25,7 @@ import editors.MasterEditorMenu;
 import flixel.input.keyboard.FlxKey;
 import flixel.effects.particles.FlxEmitter;
 import flixel.effects.particles.FlxParticle;
+import openfl.filters.ShaderFilter;
 import Shaders;
 
 using StringTools;
@@ -244,7 +245,7 @@ class MainMenuState extends MusicBeatState
 		text.scrollFactor.set();
 		add(text);
 
-		FlxG.camera.setFilters([new GrainEffect(1,1,false)]);
+		FlxG.camera.setFilters([new BloomEffect(1.0/512.0,0.35)]);
 
 		super.create();
 	}
