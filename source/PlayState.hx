@@ -104,6 +104,7 @@ class PlayState extends MusicBeatState
 	public var modchartTexts:Map<String, ModchartText> = new Map<String, ModchartText>();
 	public var shader_chromatic_abberation:ChromaticAberrationEffect;
 	public var modchartSaves:Map<String, FlxSave> = new Map<String, FlxSave>();
+	public var camStageShaders:Array<ShaderEffect> = [];
 	public var camGameShaders:Array<ShaderEffect> = [];
 	public var camHUDShaders:Array<ShaderEffect> = [];
 	public var camOtherShaders:Array<ShaderEffect> = [];
@@ -218,6 +219,7 @@ class PlayState extends MusicBeatState
 	public var iconP2:HealthIcon;
 	public var camHUD:FlxCamera;
 	public var camGame:FlxCamera;
+	public var camStage:FlxCamera;
 	public var camOther:FlxCamera;
 	public var cameraSpeed:Float = 1;
 
@@ -410,12 +412,14 @@ class PlayState extends MusicBeatState
 		cpuControlled = ClientPrefs.getGameplaySetting('botplay', false);
 
 		// var gameCam:FlxCamera = FlxG.camera;
+		camStage = new FlxCamera();
 		camGame = new FlxCamera();
 		camHUD = new FlxCamera();
 		camOther = new FlxCamera();
 		camHUD.bgColor.alpha = 0;
 		camOther.bgColor.alpha = 0;
 
+		FlxG.cameras.reset(camStage);
 		FlxG.cameras.reset(camGame);
 		FlxG.cameras.add(camHUD);
 		FlxG.cameras.add(camOther);
@@ -555,7 +559,10 @@ class PlayState extends MusicBeatState
 				ground.updateHitbox();
 				add(ground);
 
-				addShaderToCamera('bgGod', new GlitchEffect(0.025, 0.2, 0.2));
+				bg.cameras = [camStage];
+				ground.cameras = [camStage];
+
+				addShaderToCamera('camStage', new GlitchEffect(0.025, 0.2, 0.2));
 			
 			case 'ghostyHouse': //Week B part 1
 				var bg:BGSprite = new BGSprite('backgrounds/ghostyHouse', -450, -225, 1, 1);
@@ -568,7 +575,9 @@ class PlayState extends MusicBeatState
 				bg.setGraphicSize(Std.int(bg.width * 1.75));
 				add(bg);
 
-				addShaderToCamera('oh', new GlitchEffect(0.35, 0.2, 0.2));
+				bg.cameras = [camStage];
+
+				addShaderToCamera('camStage', new GlitchEffect(0.025, 0.2, 0.2));
 				addShaderToCamera('game', new VCRDistortionEffect(0.0025));
 				//addShaderToCamera('hud', new VCRDistortionEffect(0.00005));
 		}
@@ -1365,6 +1374,13 @@ class PlayState extends MusicBeatState
 					  newCamEffects.push(new ShaderFilter(i.shader));
 					}
 					camGame.setFilters(newCamEffects);
+			case 'camstage' | 'stage':
+					camStageShaders.push(effect);
+					var newCamEffects:Array<BitmapFilter>=[]; // IT SHUTS HAXE UP IDK WHY BUT WHATEVER IDK WHY I CANT JUST ARRAY<SHADERFILTER>
+					for(i in camStageShaders){
+					  newCamEffects.push(new ShaderFilter(i.shader));
+					}
+					camGame.setFilters(newCamEffects);
 			default:
 				if(modchartSprites.exists(cam)) {
 					Reflect.setProperty(modchartSprites.get(cam),"shader",effect.shader);
@@ -1436,6 +1452,10 @@ class PlayState extends MusicBeatState
 				camGameShaders = [];
 				var newCamEffects:Array<BitmapFilter>=[];
 				camGame.setFilters(newCamEffects);
+			case 'camstage' | 'stage': 
+				camStageShaders = [];
+				var newCamEffects:Array<BitmapFilter>=[];
+				camStage.setFilters(newCamEffects);
 			default: 
 				camGameShaders = [];
 				var newCamEffects:Array<BitmapFilter>=[];
