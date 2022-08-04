@@ -244,7 +244,7 @@ class MainMenuState extends MusicBeatState
 		text.scrollFactor.set();
 		add(text);
 
-		camGame.setFilters(GrainEffect(1,1,false));
+		FlxG.camera.setFilters([new GrainEffect(1,1,false)]);
 
 		super.create();
 	}
@@ -327,6 +327,8 @@ class MainMenuState extends MusicBeatState
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 			if(FreeplayState.vocals != null) FreeplayState.vocals.volume += 0.5 * elapsed;
 		}
+
+		var lerpVal:Float = CoolUtil.boundTo(elapsed * 7.5, 0, 1);
 
 		camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
 
