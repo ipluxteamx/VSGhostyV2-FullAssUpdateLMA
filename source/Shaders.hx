@@ -13,6 +13,72 @@ typedef ShaderEffect = {
   var shader:Dynamic;
 }
 
+class CircleRevealEffect {
+  public var shader:CircleRevealShader = new CircleRevealShader();
+  public function new(radius:Float = 200.0, blur:Float = 500.0, speed:Float = 2.0){
+    shader.data.radius.value = [radius];
+    shader.data.blur.value = [blur];
+    shader.data.speed.value = [speed];
+  }
+  public function addRadius(radius:Float){
+    //trace(shader.data.radius.value[0]);
+    shader.data.radius.value[0] += radius;
+  }
+  public function setRadius(radius:Float){
+    shader.data.radius.value[0] = radius;
+  }
+
+  public function addBlur(blur:Float){
+    //trace(shader.data.radius.value[0]);
+    shader.data.blur.value[0] += blur;
+  }
+  public function setBlur(blur:Float){
+    shader.data.blur.value[0] = blur;
+  }
+
+  public function addSpeed(speed:Float){
+    //trace(shader.data.radius.value[0]);
+    shader.data.speed.value[0] += speed;
+  }
+  public function setSpeed(speed:Float){
+    shader.data.speed.value[0] = speed;
+  }
+}
+
+class CircleRevealShader extends FlxShader
+{
+  public function new(){
+       super("
+    
+          //From https://www.shadertoy.com/view/lddXWS
+          ////pragma header
+          
+          uniform vec2 iResolution;
+          uniform float iTime;
+
+          const float radius;
+          const float blur;
+          const float speed;
+
+          void main()
+          {
+              vec2 fragCoord = openfl_TextureCoordv * iResolution;
+
+              vec2 uv = fragCoord.xy / iResolution.xy;
+              vec4 pic = texture2D(bitmap, vec2(uv.x, uv.y));
+              
+              vec2 center = iResolution.xy / 2.0;
+              float d = distance(fragCoord.xy, center);
+              float intensity = max((d - radius) / (2.0 + blur * (1.0 + sin(iTime*speed))), 0.0);
+
+              gl_FragColor = vec4(intensity + pic.r, intensity + pic.g, intensity + pic.b, 0.2);
+          }
+    }
+  ");
+    }
+  //
+}
+
 class BuildingEffect {
   public var shader:BuildingShader = new BuildingShader();
   public function new(){

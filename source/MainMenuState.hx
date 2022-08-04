@@ -242,6 +242,9 @@ class MainMenuState extends MusicBeatState
 		text.setFormat(Paths.font("vcr.ttf"), size, FlxColor.WHITE, RIGHT);
 		text.scrollFactor.set();
 		add(text);
+
+		PlayState.instance.addShaderToCamera("camgame", new GrainEffect(1,1,false));
+
 		super.create();
 	}
 
