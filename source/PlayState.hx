@@ -561,8 +561,6 @@ class PlayState extends MusicBeatState
 
 				bg.cameras = [camStage];
 				ground.cameras = [camStage];
-
-				addShaderToCamera('camStage', new GlitchEffect(0.025, 0.2, 0.2));
 			
 			case 'ghostyHouse': //Week B part 1
 				var bg:BGSprite = new BGSprite('backgrounds/ghostyHouse', -450, -225, 1, 1);
@@ -570,7 +568,7 @@ class PlayState extends MusicBeatState
 				bg.updateHitbox();
 				add(bg);
 
-			case 'oh': //Week B part 2
+			/*case 'oh': //Week B part 2
 				var bg:BGSprite = new BGSprite('backgrounds/oh', -1000, -300, 0.9, 0.9);
 				bg.setGraphicSize(Std.int(bg.width * 1.75));
 				add(bg);
@@ -579,7 +577,7 @@ class PlayState extends MusicBeatState
 
 				addShaderToCamera('camStage', new GlitchEffect(0.025, 0.2, 0.2));
 				addShaderToCamera('game', new VCRDistortionEffect(0.0025));
-				//addShaderToCamera('hud', new VCRDistortionEffect(0.00005));
+				//addShaderToCamera('hud', new VCRDistortionEffect(0.00005));*/
 		}
 
 		/*switch(Paths.formatToSongPath(SONG.song))

@@ -244,7 +244,7 @@ class MainMenuState extends MusicBeatState
 		text.scrollFactor.set();
 		add(text);
 
-		PlayState.instance.addShaderToCamera("camgame", new GrainEffect(1,1,false));
+		camGame.setFilters(GrainEffect(1,1,false));
 
 		super.create();
 	}
@@ -290,7 +290,7 @@ class MainMenuState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		for (i in 0...menuItems.members.length) {
-			menuItems.members[i].y = FlxMath.lerp(menuItems.members[i].y - 5, menuItems.members[i].y + 5, 1);
+			FlxTween.tween(menuItems.members[i], { y: (menuItems.members[i].y - 5) }, 2, { type: FlxTween.PINGPONG, ease: FlxEase.quadInOut, startDelay: 1, loopDelay: 2 });
 		}
 
 		if (optionShit[curSelected] == 'story_mode')
@@ -328,7 +328,6 @@ class MainMenuState extends MusicBeatState
 			if(FreeplayState.vocals != null) FreeplayState.vocals.volume += 0.5 * elapsed;
 		}
 
-		var lerpVal:Float = CoolUtil.boundTo(elapsed * 7.5, 0, 1);
 		camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
 
 		if (!selectedSomethin)
