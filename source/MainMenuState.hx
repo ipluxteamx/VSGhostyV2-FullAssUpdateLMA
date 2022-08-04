@@ -25,6 +25,7 @@ import editors.MasterEditorMenu;
 import flixel.input.keyboard.FlxKey;
 import flixel.effects.particles.FlxEmitter;
 import flixel.effects.particles.FlxParticle;
+import Shaders;
 
 using StringTools;
 
