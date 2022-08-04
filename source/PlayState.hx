@@ -548,7 +548,7 @@ class PlayState extends MusicBeatState
 				var bg:BGSprite = new BGSprite('backgrounds/ghostyStage', -600, -200, 1, 1);
 				add(bg);
 
-			case 'god': //Week B part 1
+			/*case 'god': //Week G part 2
 				var bg:BGSprite = new BGSprite('backgrounds/bgGod', -2800, -5000, 0.9, 0.9);
 				bg.setGraphicSize(Std.int(bg.width * 10));
 				bg.updateHitbox();
@@ -560,7 +560,7 @@ class PlayState extends MusicBeatState
 				add(ground);
 
 				bg.cameras = [camStage];
-				ground.cameras = [camStage];
+				ground.cameras = [camStage];*/
 			
 			case 'ghostyHouse': //Week B part 1
 				var bg:BGSprite = new BGSprite('backgrounds/ghostyHouse', -450, -225, 1, 1);
