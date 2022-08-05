@@ -555,7 +555,6 @@ class PlayState extends MusicBeatState
 				add(bg);
 
 				var ground:FlxSprite = new FlxSprite(-600, 600).loadGraphic('backgrounds/groundGod');
-				ground.scale = 1.8;
 				add(ground);
 
 				var gshader:GlitchEffect = new GlitchEffect(0.025, 0.2, 0.2);
