@@ -245,6 +245,10 @@ class MainMenuState extends MusicBeatState
 		text.scrollFactor.set();
 		add(text);
 
+		var shader:ScanlineEffect = new ScanlineEffect(false);
+		FlxG.camera.shader = shader.shader;
+
+
 		super.create();
 	}
 

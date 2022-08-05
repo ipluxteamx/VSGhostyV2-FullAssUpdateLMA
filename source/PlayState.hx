@@ -568,16 +568,20 @@ class PlayState extends MusicBeatState
 				bg.updateHitbox();
 				add(bg);
 
-			/*case 'oh': //Week B part 2
+			case 'oh': //Week B part 2
 				var bg:BGSprite = new BGSprite('backgrounds/oh', -1000, -300, 0.9, 0.9);
 				bg.setGraphicSize(Std.int(bg.width * 1.75));
 				add(bg);
 
-				bg.cameras = [camStage];
+				var gshader:GlitchEffect = new GlitchEffect();
+				gshader.waveAmplitude = 0.025;
+				gshader.waveFrequency = 0.2;
+				gshader.waveSpeed = 0.2;
+				bg.shader = gshader.shader;
+				curbg = bg;
 
-				addShaderToCamera('camStage', new GlitchEffect(0.025, 0.2, 0.2));
 				addShaderToCamera('game', new VCRDistortionEffect(0.0025));
-				//addShaderToCamera('hud', new VCRDistortionEffect(0.00005));*/
+				//addShaderToCamera('hud', new VCRDistortionEffect(0.00005));
 		}
 
 		/*switch(Paths.formatToSongPath(SONG.song))
@@ -963,6 +967,7 @@ class PlayState extends MusicBeatState
 		// FlxG.camera.setScrollBounds(0, FlxG.width, 0, FlxG.height);
 		FlxG.camera.zoom = defaultCamZoom;
 		FlxG.camera.focusOn(camFollow);
+
 
 		FlxG.worldBounds.set(0, 0, FlxG.width, FlxG.height);
 
@@ -3076,6 +3081,7 @@ class PlayState extends MusicBeatState
 		{
 			FlxG.camera.zoom = FlxMath.lerp(defaultCamZoom, FlxG.camera.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
 			camHUD.zoom = FlxMath.lerp(1, camHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
+			FlxG.camera.shake(0.0175, 0.25);
 		}
 
 		FlxG.watch.addQuick("secShit", curSection);
@@ -5063,12 +5069,10 @@ class PlayState extends MusicBeatState
 
 		dancingLeft = !dancingLeft;
 
-		if (ClientPrefs.iconbops == "OS") {
-			if (dancingLeft){
-				iconP1.angle = 8; iconP2.angle = 8; // maybe i should do it with tweens, but i'm lazy // i'll make it in -1.0.0, i promise
-			} else { 
-				iconP1.angle = -8; iconP2.angle = -8;
-			}
+		if (dancingLeft){
+			iconP1.angle = 8; iconP2.angle = 8; // maybe i should do it with tweens, but i'm lazy // i'll make it in -1.0.0, i promise
+		} else { 
+			iconP1.angle = -8; iconP2.angle = -8;
 		}
 
 		iconP1.updateHitbox();
