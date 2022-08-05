@@ -245,9 +245,6 @@ class MainMenuState extends MusicBeatState
 		text.scrollFactor.set();
 		add(text);
 
-		new DynamicShaderHandler("tailsVCR");
-		FlxG.camera.setFilters([new ShaderFilter(PlayState.animatedShaders["tailsVCR"].shader)]);
-
 		super.create();
 	}
 
