@@ -516,6 +516,10 @@ class PlayState extends MusicBeatState
 		dadGroup = new FlxSpriteGroup(DAD_X, DAD_Y);
 		gfGroup = new FlxSpriteGroup(GF_X, GF_Y);
 
+		var ohBG:FlxSprite = new FlxSprite(-1000, -300).loadGraphic(Paths.image('backgrounds/oh'));
+		var ground:FlxSprite = new FlxSprite(-600, 600).loadGraphic(Paths.image('backgrounds/groundGod'));
+		var godBG:FlxSprite = new FlxSprite(-2800, -5000).loadGraphic(Paths.image('backgrounds/bgGod'));
+
 		switch (curStage)
 		{
 			case 'stage': //Default
@@ -549,16 +553,17 @@ class PlayState extends MusicBeatState
 				add(bg);
 
 			case 'god': //Week G part 2
-				var bg:BGSprite = new BGSprite('backgrounds/bgGod', -2800, -5000, 0.9, 0.9);
-				bg.setGraphicSize(Std.int(bg.width * 10));
-				bg.updateHitbox();
-				add(bg);
+				godBG.loadGraphic(Paths.image('backgrounds/bgGod'));
+				godBG.scrollFactor.set(0.9, 0.9);
+				add(godBG);
 
-				var ground:FlxSprite = new FlxSprite(-600, 600).loadGraphic('backgrounds/groundGod');
+				ground.loadGraphic(Paths.image('backgrounds/groundGod'));
+				ground.antialiasing = true;
+				ground.scrollFactor.set(1, 1);
 				add(ground);
 
 				var gshader:GlitchEffect = new GlitchEffect(0.025, 0.2, 0.2);
-				bg.shader = gshader.shader;
+				godBG.shader = gshader.shader;
 			
 			case 'ghostyHouse': //Week B part 1
 				var bg:BGSprite = new BGSprite('backgrounds/ghostyHouse', -450, -225, 1, 1);
@@ -567,12 +572,13 @@ class PlayState extends MusicBeatState
 				add(bg);
 
 			case 'oh': //Week B part 2
-				var bg:BGSprite = new BGSprite('backgrounds/oh', -1000, -300, 0.9, 0.9);
-				bg.setGraphicSize(Std.int(bg.width * 1.75));
-				add(bg);
+				ohBG.loadGraphic(Paths.image('backgrounds/oh'));
+				ohBG.antialiasing = true;
+				ohBG.scrollFactor.set(0.9, 0.9);
+				add(ohBG);
 
-				var gshader:GlitchEffect = new GlitchEffect(0.025, 0.2, 0.2);
-				bg.shader = gshader.shader;
+				var shader:GlitchEffect = new GlitchEffect(0.025, 0.2, 0.2);
+				ohBG.shader = shader.shader;
 
 				addShaderToCamera('game', new VCRDistortionEffect(0.0025));
 				//addShaderToCamera('hud', new VCRDistortionEffect(0.00005));
@@ -3075,7 +3081,7 @@ class PlayState extends MusicBeatState
 		{
 			FlxG.camera.zoom = FlxMath.lerp(defaultCamZoom, FlxG.camera.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
 			camHUD.zoom = FlxMath.lerp(1, camHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
-			FlxG.camera.shake(0.0175, 0.25);
+			FlxG.camera.shake(0.0010, 0.0050);
 		}
 
 		FlxG.watch.addQuick("secShit", curSection);
