@@ -548,19 +548,18 @@ class PlayState extends MusicBeatState
 				var bg:BGSprite = new BGSprite('backgrounds/ghostyStage', -600, -200, 1, 1);
 				add(bg);
 
-			/*case 'god': //Week G part 2
+			case 'god': //Week G part 2
 				var bg:BGSprite = new BGSprite('backgrounds/bgGod', -2800, -5000, 0.9, 0.9);
 				bg.setGraphicSize(Std.int(bg.width * 10));
 				bg.updateHitbox();
 				add(bg);
 
-				var ground:BGSprite = new BGSprite('backgrounds/groundGod', -600, 600, 1, 1);
-				ground.setGraphicSize(Std.int(bg.width * 1.8));
-				ground.updateHitbox();
+				var ground:FlxSprite = new FlxSprite(-600, 600).loadGraphic('backgrounds/groundGod');
+				ground.scale(Std.int(ground.width * 1.8));
 				add(ground);
 
-				bg.cameras = [camStage];
-				ground.cameras = [camStage];*/
+				var gshader:GlitchEffect = new GlitchEffect(0.025, 0.2, 0.2);
+				bg.shader = gshader.shader;
 			
 			case 'ghostyHouse': //Week B part 1
 				var bg:BGSprite = new BGSprite('backgrounds/ghostyHouse', -450, -225, 1, 1);
@@ -573,12 +572,8 @@ class PlayState extends MusicBeatState
 				bg.setGraphicSize(Std.int(bg.width * 1.75));
 				add(bg);
 
-				var gshader:GlitchEffect = new GlitchEffect();
-				gshader.waveAmplitude = 0.025;
-				gshader.waveFrequency = 0.2;
-				gshader.waveSpeed = 0.2;
+				var gshader:GlitchEffect = new GlitchEffect(0.025, 0.2, 0.2);
 				bg.shader = gshader.shader;
-				curbg = bg;
 
 				addShaderToCamera('game', new VCRDistortionEffect(0.0025));
 				//addShaderToCamera('hud', new VCRDistortionEffect(0.00005));

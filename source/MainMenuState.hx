@@ -246,7 +246,7 @@ class MainMenuState extends MusicBeatState
 		add(text);
 
 		var shader:ScanlineEffect = new ScanlineEffect(false);
-		FlxG.camera.shader = shader.shader;
+		camGame.shader = shader.shader;
 
 
 		super.create();
