@@ -246,7 +246,7 @@ class MainMenuState extends MusicBeatState
 		add(text);
 
 		var shader:ScanlineEffect = new ScanlineEffect(false);
-		camGame.shader = shader.shader;
+		themedBg.shader = shader.shader;
 
 
 		super.create();
