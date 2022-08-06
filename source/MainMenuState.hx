@@ -452,7 +452,7 @@ class MainMenuState extends MusicBeatState
 				selectedSomethin = true;
 				//MusicBeatState.switchState(new MasterEditorMenu());
 				PlayState.SONG = Song.loadFromJson("uh-oh", "uh oh"); // you dun fucked up
-				FlxG.switchState(new PlayState());
+				MusicBeatState.switchState(new PlayState());
 				FlxG.save.data.uhOhFound = true;
 				return;
 			}

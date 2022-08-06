@@ -555,11 +555,15 @@ class PlayState extends MusicBeatState
 			case 'god': //Week G part 2
 				godBG.loadGraphic(Paths.image('backgrounds/bgGod'));
 				godBG.scrollFactor.set(0.9, 0.9);
+				godBG.scale.x = godBG.scale.x * 10;
+				godBG.scale.y = godBG.scale.y * 10;
 				add(godBG);
 
 				ground.loadGraphic(Paths.image('backgrounds/groundGod'));
 				ground.antialiasing = true;
 				ground.scrollFactor.set(1, 1);
+				ground.scale.x = ground.scale.x * 1.8;
+				ground.scale.y = ground.scale.y * 1.8;
 				add(ground);
 
 				var gshader:GlitchEffect = new GlitchEffect(0.025, 0.2, 0.2);
