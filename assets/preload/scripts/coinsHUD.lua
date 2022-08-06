@@ -1,6 +1,6 @@
 function onCreate()
     initSaveData('vsGhostyShop')
-    coin = getDataFromSave('vsGhostyShop', 'coin')
+    coin = getDataFromSave('vsGhostyShop', 'coin', 0)
 
     makeLuaText('coinCounter', 'Soul Coins: 0', 400, 435, 47)
     setTextAlignment('coinCounter', 'center')
