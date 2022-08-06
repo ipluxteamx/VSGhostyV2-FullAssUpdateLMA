@@ -245,7 +245,7 @@ class MainMenuState extends MusicBeatState
 		text.scrollFactor.set();
 		add(text);
 
-		var shader:ScanlineEffect = new ScanlineEffect(false);
+		var shader:GrainEffect = new GrainEffect(5, 5, false);
 		themedBg.shader = shader.shader;
 
 
@@ -292,10 +292,6 @@ class MainMenuState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-		for (i in 0...menuItems.members.length) {
-			FlxTween.tween(menuItems.members[i], { y: (menuItems.members[i].y - 5) }, 2, { type: FlxTween.PINGPONG, ease: FlxEase.quadInOut, startDelay: 1, loopDelay: 2 });
-		}
-
 		if (optionShit[curSelected] == 'story_mode')
 		{
 			menuItems.members[0].visible = true;
