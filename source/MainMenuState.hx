@@ -494,6 +494,6 @@ class MainMenuState extends MusicBeatState
 	{
 		super.beatHit();
 
-
+		FlxG.camera.zoom = FlxMath.lerp(1, FlxG.camera.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125), 0, 1));
 	}
 }
