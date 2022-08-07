@@ -56,6 +56,8 @@ class MainMenuState extends MusicBeatState
 	#end*/
 
 	var magenta:FlxSprite;
+	var randomTxt:FlxText;
+	var isTweening:Bool = false;
 	var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
@@ -233,17 +235,23 @@ class MainMenuState extends MusicBeatState
 		}
 		#end
 
-		var textBG:FlxSprite = new FlxSprite(0, FlxG.height - 26).makeGraphic(FlxG.width, 26, 0xFF000000);
+		var textBG:FlxSprite = new FlxSprite(0, FlxG.height - 48).makeGraphic(FlxG.width, 48, 0xFF000000);
 		textBG.alpha = 0.6;
 		add(textBG);
 
 		var leText:String = "placeholder for thing~ theehee~!"; //TODO: delete this message i hate it with a burning passion
 		var size:Int = 18;
+		var thing:String = "V.S. Ghosty V2";
 
 		var text:FlxText = new FlxText(textBG.x, textBG.y + 4, FlxG.width, leText, size);
 		text.setFormat(Paths.font("vcr.ttf"), size, FlxColor.WHITE, RIGHT);
 		text.scrollFactor.set();
 		add(text);
+
+		var text2:FlxText = new FlxText(textBG.x, textBG.y + 8, FlxG.width, thing, 36);
+		text2.setFormat(Paths.font("vcr.ttf"), 36, FlxColor.WHITE, LEFT);
+		text2.scrollFactor.set();
+		add(text2);
 
 		super.create();
 	}
@@ -329,6 +337,19 @@ class MainMenuState extends MusicBeatState
 
 		if (!selectedSomethin)
 		{
+			if (isTweening)
+			{
+				timer = 0;
+			}
+			else
+			{
+				timer += elapsed;
+				if (timer >= 3)
+				{
+					changeText();
+				}
+			}
+
 			if (controls.UI_LEFT_P)
 			{
 				leftArrow.animation.play('press');
@@ -495,5 +516,45 @@ class MainMenuState extends MusicBeatState
 		super.beatHit();
 
 		FlxG.camera.zoom = FlxMath.lerp(1, FlxG.camera.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125), 0, 1));
+	}
+
+	function changeText()
+	{
+		var selectedText:String = '';
+		var textArray:Array<String> = CoolUtil.coolTextFile(Paths.txt('inGameText'));
+
+		#if MODS_ALLOWED
+		textArray.insert(0, Paths.mods('data/inGameText'));
+		#end
+
+		text.alpha = 1;
+		isTweening = true;
+		selectedText = textArray[FlxG.random.int(0, (textArray.length - 1))].replace('--', '\n');
+		FlxTween.tween(text, {alpha: 0}, 1, {
+			ease: FlxEase.text,
+			onComplete: function(shit:FlxTween)
+			{
+				if (selectedText != lastString)
+				{
+					text.text = selectedText;
+					lastString = selectedText;
+				}
+				else
+				{
+					selectedText = textArray[FlxG.random.int(0, (textArray.length - 1))].replace('--', '\n');
+					text.text = selectedText;
+				}
+
+				text.alpha = 0;
+
+				FlxTween.tween(text, {alpha: 1}, 1, {
+					ease: FlxEase.linear,
+					onComplete: function(shit:FlxTween)
+					{
+						isTweening = false;
+					}
+				});
+			}
+		});
 	}
 }
