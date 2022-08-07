@@ -515,7 +515,7 @@ class MainMenuState extends MusicBeatState
 	{
 		super.beatHit();
 
-		FlxG.camera.zoom = FlxMath.lerp(1, FlxG.camera.zoom, CoolUtil.boundTo(1 - 3.125), 0, 1));
+		FlxG.camera.zoom = FlxMath.lerp(1, FlxG.camera.zoom, CoolUtil.boundTo(1 - 3.125), 0, 1bru);
 	}
 
 	function changeText()
