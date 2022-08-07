@@ -245,10 +245,6 @@ class MainMenuState extends MusicBeatState
 		text.scrollFactor.set();
 		add(text);
 
-		var shader:GrainEffect = new GrainEffect(5, 5, false);
-		themedBg.shader = shader.shader;
-
-
 		super.create();
 	}
 
