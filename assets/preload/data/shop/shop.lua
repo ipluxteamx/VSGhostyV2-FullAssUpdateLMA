@@ -39,7 +39,7 @@ function onUpdate()
 
     if keyJustPressed('accept') and getDataFromSave('vsGhostyShop', 'daHardUnlock') == 0 and getDataFromSave('vsGhostyShop', 'coin') >= 500 and curSel == 0 then
         setDataFromSave('vsGhostyShop', 'daHardUnlock', 1)
-        setDataFromSave('vsGhostyShop', 'coin', getDataFromSave('vsGhostyShop', 'coin') - 1550)
+        setDataFromSave('vsGhostyShop', 'coin', getDataFromSave('vsGhostyShop', 'coin') - 500)
         flushSaveData('vsGhostyShop')
         loadSong('dahard')
     elseif keyJustPressed('accept') and getDataFromSave('vsGhostyShop', 'daHardUnlock') == 1 and curSel == 0 then
@@ -48,7 +48,7 @@ function onUpdate()
 
     if keyJustPressed('accept') and getDataFromSave('vsGhostyShop', 'candyUnlock') == 0 and getDataFromSave('vsGhostyShop', 'coin') >= 750 and curSel == 1 then
         setDataFromSave('vsGhostyShop', 'candyUnlock', 1)
-        setDataFromSave('vsGhostyShop', 'coin', getDataFromSave('vsGhostyShop', 'coin') - 2150)
+        setDataFromSave('vsGhostyShop', 'coin', getDataFromSave('vsGhostyShop', 'coin') - 750)
         flushSaveData('vsGhostyShop')
         loadSong('candy')
     elseif keyJustPressed('accept') and getDataFromSave('vsGhostyShop', 'candyUnlock') == 1 and curSel == 1 then
@@ -65,13 +65,13 @@ function onUpdate()
     end
 
     if curSel == 0 then
-        setProperty('dahard.visible', false)
-        setProperty('candy.visible', true)
+        setProperty('dahard.visible', true)
+        setProperty('candy.visible', false)
         setProperty('emergency.visible', false)
     end
     if curSel == 1 then
-        setProperty('dahard.visible', true)
-        setProperty('candy.visible', false)
+        setProperty('dahard.visible', false)
+        setProperty('candy.visible', true)
         setProperty('emergency.visible', false)
     end
     if curSel == 2 then

@@ -129,6 +129,8 @@ class PlayState extends MusicBeatState
 	public var GF_X:Float = 400;
 	public var GF_Y:Float = 130;
 
+	// public var soulCoins:Int = 0;
+
 	public var songSpeedTween:FlxTween;
 	public var songSpeed(default, set):Float = 1;
 	public var songSpeedType:String = "multiplicative";
@@ -517,7 +519,7 @@ class PlayState extends MusicBeatState
 		gfGroup = new FlxSpriteGroup(GF_X, GF_Y);
 
 		var ohBG:FlxSprite = new FlxSprite(-1000, -300).loadGraphic(Paths.image('backgrounds/oh'));
-		var ground:FlxSprite = new FlxSprite(-600, 600).loadGraphic(Paths.image('backgrounds/groundGod'));
+		var ground:FlxSprite;
 		var godBG:FlxSprite = new FlxSprite(-2800, -5000).loadGraphic(Paths.image('backgrounds/bgGod'));
 
 		switch (curStage)
@@ -553,17 +555,19 @@ class PlayState extends MusicBeatState
 				add(bg);
 
 			case 'god': //Week G part 2
+				// TODO: make glitch artefacts and aesthetic, bc ghosty is glitching the whole thing, for ex: haxeflixel logo or title logo
 				godBG.loadGraphic(Paths.image('backgrounds/bgGod'));
-				godBG.scrollFactor.set(0.9, 0.9);
+				godBG.scrollFactor.set(0.2, 0.2);
 				godBG.scale.x = godBG.scale.x * 10;
 				godBG.scale.y = godBG.scale.y * 10;
 				add(godBG);
 
-				ground.loadGraphic(Paths.image('backgrounds/groundGod'));
+				ground = new FlxSprite(-600, 600).loadGraphic(Paths.image('backgrounds/groundGod'));
+				// ground.loadGraphic(Paths.image('backgrounds/groundGod'));
 				ground.antialiasing = true;
 				ground.scrollFactor.set(1, 1);
-				ground.scale.x = ground.scale.x * 1.8;
-				ground.scale.y = ground.scale.y * 1.8;
+				ground.scale.x = 1.8;
+				ground.scale.y = 1.8;
 				add(ground);
 
 				var gshader:GlitchEffect = new GlitchEffect(0.025, 0.2, 0.2);
@@ -3053,8 +3057,7 @@ class PlayState extends MusicBeatState
 		{
 			FlxG.camera.zoom = FlxMath.lerp(defaultCamZoom, FlxG.camera.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
 			camHUD.zoom = FlxMath.lerp(1, camHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
-			FlxG.camera.shake(0.4, 0.005);
-			camHUD.shake(0.4, 0.005);
+			FlxG.camera.shake(0.005, 0.5);
 		}
 
 		FlxG.watch.addQuick("secShit", curSection);
