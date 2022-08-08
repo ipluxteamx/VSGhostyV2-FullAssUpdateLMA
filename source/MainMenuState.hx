@@ -245,12 +245,12 @@ class MainMenuState extends MusicBeatState
 		var size:Int = 18;
 		var thing:String = "V.S. Ghosty V2";
 
-		text = new FlxText(textBG.x, textBG.y + 4, FlxG.width, leText, size);
+		text = new FlxText(textBG.x + 10, textBG.y + 12, FlxG.width, leText, size);
 		text.setFormat(Paths.font("vcr.ttf"), size, FlxColor.WHITE, RIGHT);
 		text.scrollFactor.set();
 		add(text);
 
-		var text2:FlxText = new FlxText(textBG.x, textBG.y + 8, FlxG.width, thing, 36);
+		var text2:FlxText = new FlxText(textBG.x + 10, textBG.y + 12, FlxG.width, thing, 36);
 		text2.setFormat(Paths.font("vcr.ttf"), 36, FlxColor.WHITE, LEFT);
 		text2.scrollFactor.set();
 		add(text2);
