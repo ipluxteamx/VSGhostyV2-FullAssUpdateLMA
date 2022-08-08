@@ -442,6 +442,8 @@ class TitleState extends MusicBeatState
 	var newTitle:Bool = false;
 	var titleTimer:Float = 0;
 
+	var elapsed:Float;
+
 	override function update(elapsed:Float)
 	{
 		if (FlxG.sound.music != null)
@@ -577,6 +579,7 @@ class TitleState extends MusicBeatState
 			if(controls.UI_RIGHT) swagShader.hue += elapsed * 0.1;
 		}
 
+		this.elapsed = elapsed;
 		super.update(elapsed);
 	}
 

@@ -63,6 +63,7 @@ class MainMenuState extends MusicBeatState
 	var debugKeys:Array<FlxKey>;
 	var rightArrow:FlxSprite;
 	var leftArrow:FlxSprite;
+	var text:FlxText;
 
 	override function create()
 	{
@@ -239,11 +240,11 @@ class MainMenuState extends MusicBeatState
 		textBG.alpha = 0.6;
 		add(textBG);
 
-		var leText:String = "placeholder for thing~ theehee~!"; //TODO: delete this message i hate it with a burning passion
+		var leText:String = "what the hell bru!"; //TODO: delete this message i hate it with a burning passion
 		var size:Int = 18;
 		var thing:String = "V.S. Ghosty V2";
 
-		var text:FlxText = new FlxText(textBG.x, textBG.y + 4, FlxG.width, leText, size);
+		text = new FlxText(textBG.x, textBG.y + 4, FlxG.width, leText, size);
 		text.setFormat(Paths.font("vcr.ttf"), size, FlxColor.WHITE, RIGHT);
 		text.scrollFactor.set();
 		add(text);
@@ -292,7 +293,7 @@ class MainMenuState extends MusicBeatState
 	#end
 
 	var selectedSomethin:Bool = false;
-	var timer:Int = 0;
+	var timer:Float = 0.0;
 
 	override function update(elapsed:Float)
 	{
