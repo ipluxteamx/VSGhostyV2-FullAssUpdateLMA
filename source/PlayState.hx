@@ -221,7 +221,7 @@ class PlayState extends MusicBeatState
 	public var camGame:FlxCamera;
 	public var camStage:FlxCamera;
 	public var camOther:FlxCamera;
-	public var cameraSpeed:Float = 1;
+	public var cameraSpeed:Float = 5;
 
 	var dialogue:Array<String> = ['blah blah blah', 'coolswag'];
 	var dialogueJson:DialogueFile = null;
@@ -1810,7 +1810,7 @@ class PlayState extends MusicBeatState
 					camFollow.set(camPosX, camPosY);
 					camFollowPos.setPosition(camPosX, camPosY);
 					FlxG.camera.zoom = 0.8;
-					cameraSpeed = 1;
+					cameraSpeed = 5;
 
 					calledTimes++;
 					if (calledTimes > 1)

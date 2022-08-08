@@ -47,7 +47,7 @@ class Song
 	public var events:Array<Dynamic>;
 	public var bpm:Float;
 	public var needsVoices:Bool = true;
-	public var cameraMoveOnNotes:Bool = false;
+	public var cameraMoveOnNotes:Bool = true;
 	public var arrowSkin:String;
 	public var splashSkin:String;
 	public var speed:Float = 1;

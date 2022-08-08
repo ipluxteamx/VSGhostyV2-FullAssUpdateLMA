@@ -1,13 +1,19 @@
 local defaultNotePos = {};
 local arrowMoveX = 14;
 
---function onSongStart()
+function onCreate()
+	addLuaScript('custom_events/SuperDrain')
+end
+
+function onSongStart()
 --	for i = 0,7 do
 ---		x = getPropertyFromGroup('strumLineNotes', i, 'x')
 --		y = getPropertyFromGroup('strumLineNotes', i, 'y')
 --	end
 --bumpArrow(5, 80, 50);
---end
+
+	triggerEvent("SuperDrain", '', '')
+end
 
 function onUpdate(elapsed)
 	local songPos = getSongPosition()

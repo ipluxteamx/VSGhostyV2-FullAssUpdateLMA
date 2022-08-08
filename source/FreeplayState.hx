@@ -153,9 +153,9 @@ class FreeplayState extends MusicBeatState
 		var ghosty = new FlxSprite().loadGraphic(Paths.image('Ghosty_Menu'));
 		ghosty.antialiasing = ClientPrefs.globalAntialiasing;
 		add(ghosty);
-		ghosty.x = FlxG.width - (ghosty.width + 10);
+		ghosty.x = FlxG.width;
 		ghosty.screenCenter(Y);
-		ghosty.y += 125;
+		ghosty.y += 250;
 
 		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
 		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
