@@ -64,6 +64,7 @@ class MainMenuState extends MusicBeatState
 	var rightArrow:FlxSprite;
 	var leftArrow:FlxSprite;
 	var text:FlxText;
+	var lastString:String = '';
 
 	override function create()
 	{
@@ -530,7 +531,7 @@ class MainMenuState extends MusicBeatState
 		isTweening = true;
 		selectedText = textArray[FlxG.random.int(0, (textArray.length - 1))].replace('--', '\n');
 		FlxTween.tween(text, {alpha: 0}, 1, {
-			ease: FlxEase.text,
+			ease: FlxEase.smootherStepInOut,
 			onComplete: function(shit:FlxTween)
 			{
 				if (selectedText != lastString)
