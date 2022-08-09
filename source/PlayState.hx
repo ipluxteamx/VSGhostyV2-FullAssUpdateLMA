@@ -519,7 +519,7 @@ class PlayState extends MusicBeatState
 		gfGroup = new FlxSpriteGroup(GF_X, GF_Y);
 
 		var ohBG:FlxSprite = new FlxSprite(-1000, -300).loadGraphic(Paths.image('backgrounds/oh'));
-		var ground:FlxSprite = new FlxSprite(-600, 600).loadGraphic(Paths.image('backgrounds/groundGod'));;
+		var ground:FlxSprite = new FlxSprite(-600, 600).loadGraphic(Paths.image('backgrounds/groundGod'));
 		var godBG:FlxSprite = new FlxSprite(-2800, -5000).loadGraphic(Paths.image('backgrounds/bgGod'));
 
 		switch (curStage)
