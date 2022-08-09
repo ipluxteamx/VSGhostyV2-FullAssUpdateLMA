@@ -359,7 +359,7 @@ class PauseSubState extends MusicBeatSubstate
 		}
 
 		for (i in 0...menuItems.length) {
-			var item = new Alphabet(0, 60 * i + 30, menuItems[i], true, false);
+			var item = new Alphabet(0, 40 * i + 30, menuItems[i], true, false, 0, 0.85);
 			item.itemType = 'Left';
 			item.isMenuItem = true;
 			item.targetY = i;

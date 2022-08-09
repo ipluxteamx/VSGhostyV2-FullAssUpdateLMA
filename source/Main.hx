@@ -55,6 +55,8 @@ class Main extends Sprite
 		{
 			addEventListener(Event.ADDED_TO_STAGE, init);
 		}
+
+		flixel.addons.studio.FlxStudio.create();
 	}
 
 	private function init(?E:Event):Void

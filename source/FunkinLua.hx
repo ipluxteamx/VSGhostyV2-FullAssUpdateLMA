@@ -1219,6 +1219,7 @@ class FunkinLua {
 				case 'up': key = PlayState.instance.getControl('NOTE_UP');
 				case 'right': key = PlayState.instance.getControl('NOTE_RIGHT');
 				case 'space': key = FlxG.keys.pressed.SPACE;//an extra key for convinience
+				case 'escape': key = FlxG.keys.pressed.ESCAPE;
 			}
 			return key;
 		});
@@ -2922,7 +2923,7 @@ class FunkinLua {
 
 			var result:Null<Int> = Lua.pcall(lua, args.length, 1, 0);
 			var error:Dynamic = getErrorMessage();
-			if(!resultIsAllowed(lua, result))
+			if(!resultIsAllowed(lua, result) || error != null)
 			{
 				Lua.pop(lua, 1);
 				if(error != null) luaTrace("ERROR (" + func + "): " + error, false, false, FlxColor.RED);

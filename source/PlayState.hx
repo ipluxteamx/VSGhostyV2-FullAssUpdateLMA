@@ -519,7 +519,7 @@ class PlayState extends MusicBeatState
 		gfGroup = new FlxSpriteGroup(GF_X, GF_Y);
 
 		var ohBG:FlxSprite = new FlxSprite(-1000, -300).loadGraphic(Paths.image('backgrounds/oh'));
-		var ground:FlxSprite;
+		var ground:FlxSprite = new FlxSprite(-600, 600).loadGraphic(Paths.image('backgrounds/groundGod'));;
 		var godBG:FlxSprite = new FlxSprite(-2800, -5000).loadGraphic(Paths.image('backgrounds/bgGod'));
 
 		switch (curStage)
@@ -558,16 +558,16 @@ class PlayState extends MusicBeatState
 				// TODO: make glitch artefacts and aesthetic, bc ghosty is glitching the whole thing, for ex: haxeflixel logo or title logo
 				godBG.loadGraphic(Paths.image('backgrounds/bgGod'));
 				godBG.scrollFactor.set(0.2, 0.2);
-				godBG.scale.x = godBG.scale.x * 10;
-				godBG.scale.y = godBG.scale.y * 10;
+				// godBG.scale.x = godBG.scale.x * 10;
+				// godBG.scale.y = godBG.scale.y * 10;
+				godBG.scale.set(5, 5);
 				add(godBG);
 
-				ground = new FlxSprite(-600, 600).loadGraphic(Paths.image('backgrounds/groundGod'));
-				// ground.loadGraphic(Paths.image('backgrounds/groundGod'));
+				// ground = new FlxSprite(-600, 600).loadGraphic(Paths.image('backgrounds/groundGod'));
+				ground.loadGraphic(Paths.image('backgrounds/groundGod'));
 				ground.antialiasing = true;
 				ground.scrollFactor.set(1, 1);
-				ground.scale.x = 1.8;
-				ground.scale.y = 1.8;
+				ground.scale.set(1.8, 1.8);
 				add(ground);
 
 				var gshader:GlitchEffect = new GlitchEffect(0.025, 0.2, 0.2);

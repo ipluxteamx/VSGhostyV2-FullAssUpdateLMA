@@ -35,7 +35,7 @@ function onUpdate()
         endSong()
     end
 
-    setTextString('coinCounter', 'Soul Coins: ' .. getDataFromSave('vsGhostyShop', 'coin'))
+    setTextString('coinCounter', 'Soul Coins: ' .. getDataFromSave('vsGhostyShop', 'coin', 0))
 
     if keyJustPressed('accept') and getDataFromSave('vsGhostyShop', 'daHardUnlock') == 0 and getDataFromSave('vsGhostyShop', 'coin') >= 500 and curSel == 0 then
         setDataFromSave('vsGhostyShop', 'daHardUnlock', 1)
