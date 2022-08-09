@@ -3057,8 +3057,8 @@ class PlayState extends MusicBeatState
 		{
 			FlxG.camera.zoom = FlxMath.lerp(defaultCamZoom, FlxG.camera.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
 			camHUD.zoom = FlxMath.lerp(1, camHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
-			FlxG.camera.shake(0.003, 0.15);
-			camHUD.shake(0.003, 0.15);
+			FlxG.camera.shake(0.003, 0.050);
+			camHUD.shake(0.003, 0.050);
 		}
 
 		FlxG.watch.addQuick("secShit", curSection);
