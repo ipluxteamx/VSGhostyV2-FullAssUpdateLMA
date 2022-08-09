@@ -558,16 +558,16 @@ class PlayState extends MusicBeatState
 				// TODO: make glitch artefacts and aesthetic, bc ghosty is glitching the whole thing, for ex: haxeflixel logo or title logo
 				godBG.loadGraphic(Paths.image('backgrounds/bgGod'));
 				godBG.scrollFactor.set(0.2, 0.2);
-				// godBG.scale.x = godBG.scale.x * 10;
-				// godBG.scale.y = godBG.scale.y * 10;
-				godBG.scale.set(5, 5);
+				godBG.scale.x = godBG.scale.x * 10;
+				godBG.scale.y = godBG.scale.y * 10;
+				// godBG.scale.set(5, 5);
 				add(godBG);
 
 				// ground = new FlxSprite(-600, 600).loadGraphic(Paths.image('backgrounds/groundGod'));
 				ground.loadGraphic(Paths.image('backgrounds/groundGod'));
 				ground.antialiasing = true;
 				ground.scrollFactor.set(1, 1);
-				ground.scale.set(1.8, 1.8);
+				ground.scale.set(3, 3);
 				add(ground);
 
 				var gshader:GlitchEffect = new GlitchEffect(0.025, 0.2, 0.2);
