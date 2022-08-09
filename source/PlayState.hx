@@ -5046,10 +5046,21 @@ class PlayState extends MusicBeatState
 
 		dancingLeft = !dancingLeft;
 
-		if (dancingLeft){
+		/*if (dancingLeft){
 			iconP1.angle = 8; iconP2.angle = 8; // maybe i should do it with tweens, but i'm lazy // i'll make it in -1.0.0, i promise
 		} else { 
 			iconP1.angle = -8; iconP2.angle = -8;
+		}*/
+
+		var P1angle:Dynamic = iconP1.angle;
+		var P2angle:Dynamic = iconP2.angle;
+
+		if (dancingLeft) {
+			FlxTween.angle(iconP1, P1angle, P1angle + 8, 1, {type: FlxTweenType.PINGPONG, ease: FlxEase.backInOut});
+			FlxTween.angle(iconP2, P2angle, P2angle + 8, 1, {type: FlxTweenType.PINGPONG, ease: FlxEase.backInOut});
+		} else {
+			FlxTween.angle(iconP1, P1angle, P1angle - 8, 1, {type: FlxTweenType.PINGPONG, ease: FlxEase.backInOut});
+			FlxTween.angle(iconP2, P2angle, P2angle - 8, 1, {type: FlxTweenType.PINGPONG, ease: FlxEase.backInOut});
 		}
 
 		iconP1.updateHitbox();
