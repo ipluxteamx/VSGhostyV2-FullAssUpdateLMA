@@ -5,11 +5,6 @@
 	
 -- end
 
-
-function onCreatePost()
-    setPropertyFromClass("openfl.Lib", "application.window.title", "Last Straw.")
-end
-
 function onStepHit()
     if curStep % 4 == 0 then
         doTweenY('rrr', 'camHUD', -12, stepCrochet*0.002, 'circOut')

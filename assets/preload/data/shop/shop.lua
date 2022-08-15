@@ -1,12 +1,17 @@
 curSel = 0
 function onCreate()
+    setProperty('skipCountdown', true)
+
     initSaveData('vsGhostyShop')
+
     makeLuaSprite('ShopBG', 'titleBG', 0, 0)
     addLuaSprite('ShopBG', false)
     setObjectCamera('ShopBG', 'other')
+
     setTextSize('coinCounter', 36)
     addLuaText('coinCounter', true)
     setObjectCamera('coinCounter', 'other')
+    
     makeLuaSprite('dahard', 'shopImages/dahard', 435, 200)
     addLuaSprite('dahard', true)
     setObjectCamera('dahard', 'other')
@@ -26,6 +31,7 @@ function onUpdate()
     if keyPressed('space') then
         setDataFromSave('vsGhostyShop', 'daHardUnlock', 0)
         setDataFromSave('vsGhostyShop', 'candyUnlock', 0)
+        setDataFromSave('vsGhostyShop', 'emergencyUnlock', 0)
         setDataFromSave('vsGhostyShop', 'coin', 0)
         flushSaveData('vsGhostyShop')
         loadSong('despair')
@@ -57,7 +63,7 @@ function onUpdate()
 
     if keyJustPressed('accept') and getDataFromSave('vsGhostyShop', 'emergencyUnlock') == 0 and getDataFromSave('vsGhostyShop', 'coin') >= 800 and curSel == 2 then
         setDataFromSave('vsGhostyShop', 'emergencyUnlock', 1)
-        setDataFromSave('vsGhostyShop', 'coin', getDataFromSave('vsGhostyShop', 'coin') - 2150)
+        setDataFromSave('vsGhostyShop', 'coin', getDataFromSave('vsGhostyShop', 'coin') - 800)
         flushSaveData('vsGhostyShop')
         loadSong('emergency')
     elseif keyJustPressed('accept') and getDataFromSave('vsGhostyShop', 'emergencyUnlock') == 1 and curSel == 2 then

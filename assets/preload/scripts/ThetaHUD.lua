@@ -1,5 +1,8 @@
 function onCreatePost()
   local noteSize = 0.675
+
+    removeLuaScript("custom_events/zCameraFix")
+    addLuaScript("custom_events/zCameraFix")
 --disable timebar
     setProperty('timeBar.visible', false)
     setProperty('timeBarBG.visible', false)
@@ -66,6 +69,8 @@ function onCreatePost()
       for i=0,7 do
         setPropertyFromGroup("strumLineNotes", i, "scale.x", noteSize)
         setPropertyFromGroup("strumLineNotes", i, "scale.y", noteSize)
+        setPropertyFromGroup("strumLineNotes", i, "alpha", 0.875)
+        setPropertyFromGroup("strumLineNotes", i, "alpha", 0.875)
       end  
 
       makeLuaSprite('scoreThing', '', getPropertyFromGroup('score-n-acc.y'), 0)

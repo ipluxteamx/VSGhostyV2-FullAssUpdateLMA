@@ -42,6 +42,7 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'story_mode',
 		'song_selector',
+		'shop',
 		//#if MODS_ALLOWED 'mods', #end
 		//#if ACHIEVEMENTS_ALLOWED 'awards', #end REMINDER TO UNCOMMENT THIS LATER
 		'credits',
@@ -237,7 +238,7 @@ class MainMenuState extends MusicBeatState
 		}
 		#end
 
-		var textBG:FlxSprite = new FlxSprite(0, FlxG.height - 48).makeGraphic(FlxG.width, 48, 0xFF000000);
+		var textBG:FlxSprite = new FlxSprite(0, FlxG.height - 56).makeGraphic(FlxG.width, 56, 0xFF000000);
 		textBG.alpha = 0.6;
 		add(textBG);
 
@@ -245,12 +246,12 @@ class MainMenuState extends MusicBeatState
 		var size:Int = 18;
 		var thing:String = "V.S. Ghosty V2";
 
-		text = new FlxText(textBG.x - 25, textBG.y + 2, FlxG.width, leText, size);
+		text = new FlxText(textBG.x - 25, textBG.y + 6, FlxG.width, leText, size);
 		text.setFormat(Paths.font("vcr.ttf"), size, FlxColor.WHITE, RIGHT);
 		text.scrollFactor.set();
 		add(text);
 
-		var text2:FlxText = new FlxText(textBG.x + 25, textBG.y + 2, FlxG.width, thing, 36);
+		var text2:FlxText = new FlxText(textBG.x + 25, textBG.y + 6, FlxG.width, thing, 36);
 		text2.setFormat(Paths.font("vcr.ttf"), 36, FlxColor.WHITE, LEFT);
 		text2.scrollFactor.set();
 		add(text2);
@@ -304,6 +305,7 @@ class MainMenuState extends MusicBeatState
 			menuItems.members[1].visible = false;
 			menuItems.members[2].visible = false;
 			menuItems.members[3].visible = false;
+			menuItems.members[4].visible = false;
 		}
 		if (optionShit[curSelected] == 'song_selector')
 		{
@@ -311,20 +313,31 @@ class MainMenuState extends MusicBeatState
 			menuItems.members[0].visible = false;
 			menuItems.members[2].visible = false;
 			menuItems.members[3].visible = false;
+			menuItems.members[4].visible = false;
 		}
-		if (optionShit[curSelected] == 'credits')
+		if (optionShit[curSelected] == 'shop')
 		{
 			menuItems.members[2].visible = true;
 			menuItems.members[0].visible = false;
 			menuItems.members[1].visible = false;
 			menuItems.members[3].visible = false;
+			menuItems.members[4].visible = false;
 		}
-		if (optionShit[curSelected] == 'options')
+		if (optionShit[curSelected] == 'credits')
 		{
 			menuItems.members[3].visible = true;
 			menuItems.members[0].visible = false;
 			menuItems.members[1].visible = false;
 			menuItems.members[2].visible = false;
+			menuItems.members[4].visible = false;
+		}
+		if (optionShit[curSelected] == 'options')
+		{
+			menuItems.members[4].visible = true;
+			menuItems.members[0].visible = false;
+			menuItems.members[1].visible = false;
+			menuItems.members[2].visible = false;
+			menuItems.members[3].visible = false;
 		}
 
 		if (FlxG.sound.music.volume < 0.8)
@@ -437,6 +450,7 @@ class MainMenuState extends MusicBeatState
 							FlxFlicker.flicker(spr, 1, 0.06, false, false, function(flick:FlxFlicker)
 
 							{
+								var curDifficulty:Int = -1;
 								var daChoice:String = optionShit[curSelected];
 
 								switch (daChoice)
@@ -445,6 +459,12 @@ class MainMenuState extends MusicBeatState
 										MusicBeatState.switchState(new StoryMenuState());
 									case 'song_selector':
 										MusicBeatState.switchState(new FreeplayState());
+									case 'shop':
+										var poop = Highscore.formatSong("shop", curDifficulty);
+										PlayState.SONG = Song.loadFromJson(poop, "shop");
+										PlayState.storyDifficulty = curDifficulty;
+										PlayState.instance.persistentUpdate = false;
+										LoadingState.loadAndSwitchState(new PlayState());
 									/*#if MODS_ALLOWED
 									case 'mods':
 										MusicBeatState.switchState(new ModsMenuState()); 
@@ -462,7 +482,7 @@ class MainMenuState extends MusicBeatState
 				}
 			//}
 			#if desktop
-			else if (FlxG.keys.anyJustPressed(debugKeys))
+			else if (FlxG.keys.justPressed.SEVEN)
 			{
 				selectedSomethin = true;
 				//MusicBeatState.switchState(new MasterEditorMenu());

@@ -18,7 +18,7 @@ class DiscordClient
 		trace("Discord Client starting...");
 		
 		DiscordRpc.start({
-			clientID: "963344162600656947",
+			clientID: "886261129008013353",
 			onReady: onReady,
 			onError: onError,
 			onDisconnected: onDisconnected
@@ -47,7 +47,7 @@ class DiscordClient
 			details: "In the Menus",
 			state: null,
 			largeImageKey: 'icon',
-			largeImageText: "OS Engine — Modded Psych Engine"
+			largeImageText: "V.S. Ghosty V2 - The Full Ass Update"
 		});
 	}
 
@@ -84,7 +84,7 @@ class DiscordClient
 			details: details,
 			state: state,
 			largeImageKey: 'icon',
-			largeImageText: "Engine Version: " + MainMenuState.osEngineVersion,
+			largeImageText: "V.S. Ghosty V2 - The Full Ass Update",
 			smallImageKey : smallImageKey,
 			// Obtained times are in milliseconds so they are divided so Discord can use it
 			startTimestamp : Std.int(startTimestamp / 1000),

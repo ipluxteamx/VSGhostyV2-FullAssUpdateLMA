@@ -565,6 +565,8 @@ class PlayState extends MusicBeatState
 
 				// ground = new FlxSprite(-600, 600).loadGraphic(Paths.image('backgrounds/groundGod'));
 				ground.loadGraphic(Paths.image('backgrounds/groundGod'));
+				ground.x += 250;
+				ground.y += 500;
 				ground.antialiasing = true;
 				ground.scrollFactor.set(1, 1);
 				ground.scale.set(3, 3);
@@ -1007,7 +1009,7 @@ class PlayState extends MusicBeatState
 		add(scoreTxt);
 
 		songTxt = new FlxText(12, FlxG.height - 24, 0, "", 8);
-		songTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		songTxt.setFormat(Paths.font("vcr.ttf"), 14, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		songTxt.scrollFactor.set();
 		songTxt.borderSize = 1;
 		if (!ClientPrefs.hideWatermark && !ClientPrefs.hideHud) {
@@ -1016,7 +1018,7 @@ class PlayState extends MusicBeatState
 			songTxt.visible = false;
 		}
 		add(songTxt);
-		songTxt.text = curSong + " (" + storyDifficultyText + ") " + "| OS " + MainMenuState.osEngineVersion;
+		songTxt.text = curSong + " (" + storyDifficultyText + ") " + "| V.S. Ghosty V2";
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -3057,8 +3059,6 @@ class PlayState extends MusicBeatState
 		{
 			FlxG.camera.zoom = FlxMath.lerp(defaultCamZoom, FlxG.camera.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
 			camHUD.zoom = FlxMath.lerp(1, camHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
-			FlxG.camera.shake(0.003, 0.050);
-			camHUD.shake(0.003, 0.050);
 		}
 
 		FlxG.watch.addQuick("secShit", curSection);
@@ -4574,7 +4574,7 @@ class PlayState extends MusicBeatState
 			if(note.gfNote) {
 				char = gf;
 			}
-			if (SONG.cameraMoveOnNotes) {
+			//if (SONG.cameraMoveOnNotes) {
 				if(SONG.notes[Math.floor(curStep / 16)].mustHitSection == false && !note.isSustainNote)
 					{
 						if (!dad.stunned)
@@ -4596,7 +4596,9 @@ class PlayState extends MusicBeatState
 								}                   
 							}
 					} 
-			}
+			//}
+
+			//istfg IM SO DUMBASSS
 
 			if(SONG.healthdrain > 0) {
 				var ppppperc = SONG.healthdrain/100;
@@ -4700,7 +4702,7 @@ class PlayState extends MusicBeatState
 					boyfriend.playAnim(animToPlay + note.animSuffix, true);
 					boyfriend.holdTimer = 0;
 
-					if(SONG.cameraMoveOnNotes){
+					//if(SONG.cameraMoveOnNotes){
 						if(SONG.notes[Math.floor(curStep / 16)].mustHitSection == true && !note.isSustainNote){
 							if (!boyfriend.stunned){
 								switch(Std.int(Math.abs(note.noteData))){				 
@@ -4719,7 +4721,7 @@ class PlayState extends MusicBeatState
 								}                        
 							}
 						}
-					}
+					//}
 				}
 
 				if(note.noteType == 'Hey!') {
@@ -5046,13 +5048,13 @@ class PlayState extends MusicBeatState
 
 		dancingLeft = !dancingLeft;
 
-		/*if (dancingLeft){
+		if (dancingLeft){
 			iconP1.angle = 8; iconP2.angle = 8; // maybe i should do it with tweens, but i'm lazy // i'll make it in -1.0.0, i promise
 		} else { 
 			iconP1.angle = -8; iconP2.angle = -8;
-		}*/
+		}
 
-		var P1angle:Dynamic = iconP1.angle;
+		/*var P1angle:Dynamic = iconP1.angle;
 		var P2angle:Dynamic = iconP2.angle;
 
 		if (dancingLeft) {
@@ -5061,7 +5063,7 @@ class PlayState extends MusicBeatState
 		} else {
 			FlxTween.angle(iconP1, P1angle, P1angle - 8, 1, {type: FlxTweenType.PINGPONG, ease: FlxEase.backInOut});
 			FlxTween.angle(iconP2, P2angle, P2angle - 8, 1, {type: FlxTweenType.PINGPONG, ease: FlxEase.backInOut});
-		}
+		}*/
 
 		iconP1.updateHitbox();
 		iconP2.updateHitbox();
@@ -5179,10 +5181,12 @@ class PlayState extends MusicBeatState
 
 			if (camZooming && FlxG.camera.zoom < 1.35 && ClientPrefs.camZooms)
 			{
+				FlxG.camera.shake(0.0025, 0.15);
+				camHUD.shake(0.0025, 0.15);
 				FlxG.camera.zoom += 0.015 * camZoomingMult;
 				camHUD.zoom += 0.03 * camZoomingMult;
 			}
-
+				
 			if (SONG.notes[curSection].changeBPM)
 			{
 				Conductor.changeBPM(SONG.notes[curSection].bpm);

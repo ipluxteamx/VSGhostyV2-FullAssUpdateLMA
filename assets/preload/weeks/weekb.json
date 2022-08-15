@@ -2,8 +2,9 @@
 	"songs": [
 		["Another It", "blake", [200, 200, 200]],
 		["Happening", "blake", [150, 150, 150]],
-		["Boss Battle", "3dblackgoop", [20, 20, 20]],
-		["Portal", "3dblackgoop", [10, 10, 10]],
+		["Boss Battle", "2d-gloopy", [20, 20, 20]],
+		["Opening", "2d-gloopy", [15, 15, 15]],
+		["Portal", "2d-gloopy", [10, 10, 10]],
         ["Remorse", "bf", [50, 50, 50]]
 	],
 
