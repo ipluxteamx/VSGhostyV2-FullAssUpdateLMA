@@ -244,7 +244,7 @@ class MainMenuState extends MusicBeatState
 
 		var leText:String = "what the hell bru!"; //TODO: delete this message i hate it with a burning passion
 		var size:Int = 18;
-		var thing:String = "V.S. Ghosty V2";
+		var thing:String = "Friday Night Ghostin'";
 
 		text = new FlxText(textBG.x - 25, textBG.y + 6, FlxG.width, leText, size);
 		text.setFormat(Paths.font("vcr.ttf"), size, FlxColor.WHITE, RIGHT);
@@ -255,6 +255,8 @@ class MainMenuState extends MusicBeatState
 		text2.setFormat(Paths.font("vcr.ttf"), 36, FlxColor.WHITE, LEFT);
 		text2.scrollFactor.set();
 		add(text2);
+
+		changeText();
 
 		super.create();
 	}

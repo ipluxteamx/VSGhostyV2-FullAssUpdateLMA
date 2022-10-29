@@ -1018,7 +1018,7 @@ class PlayState extends MusicBeatState
 			songTxt.visible = false;
 		}
 		add(songTxt);
-		songTxt.text = curSong + " (" + storyDifficultyText + ") " + "| V.S. Ghosty V2";
+		songTxt.text = curSong + " (" + storyDifficultyText + ") " + "| Friday Night Ghostin'";
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -4703,7 +4703,7 @@ class PlayState extends MusicBeatState
 					boyfriend.holdTimer = 0;
 
 					//if(SONG.cameraMoveOnNotes){
-						if(SONG.notes[Math.floor(curStep / 16)].mustHitSection == true && !note.isSustainNote){
+						/*if(SONG.notes[Math.floor(curStep / 16)].mustHitSection == true && !note.isSustainNote){
 							if (!boyfriend.stunned){
 								switch(Std.int(Math.abs(note.noteData))){				 
 									case 0:
@@ -4720,7 +4720,7 @@ class PlayState extends MusicBeatState
 										camFollow.x += boyfriend.cameraPosition[0] + cameramovingoffsetbf; camFollow.y += boyfriend.cameraPosition[1];			
 								}                        
 							}
-						}
+						}*/
 					//}
 				}
 

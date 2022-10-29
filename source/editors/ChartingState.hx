@@ -224,7 +224,7 @@ class ChartingState extends MusicBeatState
 				bpm: 150.0,
 				songInstVolume: 1.0,
 				needsVoices: true,
-				cameraMoveOnNotes: true,
+				//cameraMoveOnNotes: true,
 				healthdrain: 0,
 				healthdrainKill: false,
 				arrowSkin: '',

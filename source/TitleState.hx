@@ -279,12 +279,14 @@ class TitleState extends MusicBeatState
 		persistentUpdate = true;
 
 		logoBl = new FlxSprite(titleJSON.titlex, titleJSON.titley);
-		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
+		logoBl.frames = Paths.getSparrowAtlas('ghostyNlogo');
 
 		logoBl.antialiasing = ClientPrefs.globalAntialiasing;
-		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24, false);
+		logoBl.animation.addByPrefix('bump', 'Occurrence logo 1', 24, false);
 		logoBl.animation.play('bump');
+		logoBl.scale.set(1.5, 1.5);
 		logoBl.updateHitbox();
+		logoBl.screenCenter();
 		// logoBl.screenCenter();
 		// logoBl.color = FlxColor.BLACK;
 
@@ -668,13 +670,13 @@ class TitleState extends MusicBeatState
 				case 12:
 					deleteCoolText();
 				case 13:
-					createCoolText(['Friday Night Funkin']);
+					createCoolText(['Friday']);
 				// credTextShit.visible = true;
 				case 14:
-					addMoreText('V.S. Ghosty V2');
+					addMoreText('Night');
 				// credTextShit.text += '\nNight';
 				case 15:
-					addMoreText('The Full Ass Update'); // credTextShit.text += '\nFunkin';
+					addMoreText('Ghostin\''); // credTextShit.text += '\nFunkin';
 
 				case 17:
 					skipIntro();

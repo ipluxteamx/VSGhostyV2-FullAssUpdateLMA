@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="ghostyNlogo.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Occurrence logo 10000" x="0" y="0" width="470" height="447"/>
+	<SubTexture name="Occurrence logo 10001" x="470" y="0" width="430" height="410" frameX="-20" frameY="-27" frameWidth="470" frameHeight="447"/>
+	<SubTexture name="Occurrence logo 10002" x="900" y="0" width="413" height="395" frameX="-28" frameY="-35" frameWidth="470" frameHeight="447"/>
+	<SubTexture name="Occurrence logo 10003" x="1313" y="0" width="398" height="382" frameX="-36" frameY="-42" frameWidth="470" frameHeight="447"/>
+	<SubTexture name="Occurrence logo 10004" x="0" y="447" width="385" height="370" frameX="-42" frameY="-48" frameWidth="470" frameHeight="447"/>
+	<SubTexture name="Occurrence logo 10005" x="0" y="447" width="385" height="370" frameX="-42" frameY="-48" frameWidth="470" frameHeight="447"/>
+	<SubTexture name="Occurrence logo 10006" x="0" y="447" width="385" height="370" frameX="-42" frameY="-48" frameWidth="470" frameHeight="447"/>
+	<SubTexture name="Occurrence logo 10007" x="0" y="447" width="385" height="370" frameX="-42" frameY="-48" frameWidth="470" frameHeight="447"/>
+	<SubTexture name="Occurrence logo 10008" x="0" y="447" width="385" height="370" frameX="-42" frameY="-48" frameWidth="470" frameHeight="447"/>
+	<SubTexture name="Occurrence logo 10009" x="385" y="447" width="390" height="374" frameX="-40" frameY="-46" frameWidth="470" frameHeight="447"/>
+	<SubTexture name="Occurrence logo 10010" x="385" y="447" width="390" height="374" frameX="-40" frameY="-46" frameWidth="470" frameHeight="447"/>
+	<SubTexture name="Occurrence logo 10011" x="385" y="447" width="390" height="374" frameX="-40" frameY="-46" frameWidth="470" frameHeight="447"/>
+	<SubTexture name="Occurrence logo 10012" x="385" y="447" width="390" height="374" frameX="-40" frameY="-46" frameWidth="470" frameHeight="447"/>
+	<SubTexture name="Occurrence logo 10013" x="385" y="447" width="390" height="374" frameX="-40" frameY="-46" frameWidth="470" frameHeight="447"/>
+	<SubTexture name="Occurrence logo 10014" x="775" y="447" width="445" height="424" frameX="-12" frameY="-20" frameWidth="470" frameHeight="447"/>
+</TextureAtlas>
