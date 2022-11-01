@@ -486,9 +486,11 @@ class MainMenuState extends MusicBeatState
 			#if desktop
 			else if (FlxG.keys.justPressed.SEVEN)
 			{
+				var curDifficulty:Int = -1;
 				selectedSomethin = true;
 				//MusicBeatState.switchState(new MasterEditorMenu());
-				PlayState.SONG = Song.loadFromJson("uh-oh", "uh oh"); // you dun fucked up
+				var poop = Highscore.formatSong("uh oh", curDifficulty);
+				PlayState.SONG = Song.loadFromJson(poop, "uh oh");
 				MusicBeatState.switchState(new PlayState());
 				FlxG.save.data.uhOhFound = true;
 				return;
